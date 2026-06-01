@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "MLATE"
+version = "0.1.0"
+description = "Multi-dimensional Literature Analysis and Thematic Exploration"
+authors = [{name = "naclcode"}]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "openai>=1.0",
+    "pandas>=1.0",
+    "openpyxl",
+    "xlrd",
+    "tqdm",
+]
+
+[project.scripts]
+mlate = "cli:main"
+
+[tool.setuptools]
+packages = ["stages"]
+py-modules = ["cli", "config", "llm", "loaders", "logger", "pipeline", "utils", "__init__", "__main__"]
+
+[tool.setuptools.package-data]
+"*" = ["prompts/*.md"]
