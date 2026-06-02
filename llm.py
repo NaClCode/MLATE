@@ -42,6 +42,24 @@ class LLM:
 
         self.client = OpenAI(base_url=self.api_base, api_key=self.api_key)
 
+    def chat(self, messages: list, temperature: float = 0.2, retries: int = 2) -> str | None:
+        """Standard chat completion for plain text"""
+        last_err = None
+        for attempt in range(retries + 1):
+            try:
+                resp = self.client.chat.completions.create(
+                    model=self.model,
+                    messages=messages,
+                    temperature=temperature,
+                )
+                return resp.choices[0].message.content
+            except Exception as e:
+                last_err = e
+                if attempt < retries:
+                    time.sleep(1)
+        logger.error(f"LLM 调用失败: {last_err}", f"LLM call failed: {last_err}")
+        return None
+
     def chat_json(self, messages: list, temperature: float = 0.2, retries: int = 2) -> dict | None:
         last_err = None
         for attempt in range(retries + 1):

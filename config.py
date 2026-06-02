@@ -141,19 +141,22 @@ def cmd_config(args):
         logger.info(f"Config file: {CONFIG_FILE}", f"配置文件: {CONFIG_FILE}")
         logger.info(f"Env variable: MLATE_API_KEY", f"环境变量: MLATE_API_KEY")
         logger.info("")
+        
+        cfg = load()
         model = resolve_model()
         base = resolve_base_url(model)
         key = resolve_api_key()
+        
         key_source_cn = "环境变量" if key else "无"
         key_source_en = "Env Var" if key else "None"
         
         logger.info("Current effective configuration:", "当前生效配置:")
-        logger.info(f"  model    = {model}")
-        logger.info(f"  api_base = {base}")
-        logger.info(f"  api_key  = {'[Set]' if key else '[Not Set]'} ({key_source_en})",
-                    f"  api_key  = {'[已设置]' if key else '[未设置]'} ({key_source_cn})")
+        logger.info(f"  model       = {model}")
+        logger.info(f"  api_base    = {base}")
+        logger.info(f"  log_lang    = {cfg.get('lang', 'en')}")
+        logger.info(f"  output_lang = {cfg.get('output_lang', '中文')}")
         logger.info("")
-        cfg = load()
+        
         if "api_key" in cfg:
             del cfg["api_key"] # Clean up legacy key if exists
             save(cfg)

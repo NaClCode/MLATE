@@ -5,6 +5,8 @@
 import json, random
 import pandas as pd
 from pathlib import Path
+
+from tqdm import tqdm
 from llm import LLM, RateLimiter
 from stages import filter_stage, explore_stage
 from logger import logger
@@ -95,7 +97,7 @@ class MLATEPipeline:
     # ── filter ──
     def filter(self, input_csv: str, output_csv: str = None,
                topic: str = "", min_score: float = 3.0,
-               source_type: str = "auto") -> "pd.DataFrame":
+               source_type: str = "auto", language: str = "中文") -> "pd.DataFrame":
         df, mapping = BaseLoader.load(input_csv, source_type)
         _show_data_peek(df, mapping)
         
@@ -106,6 +108,7 @@ class MLATEPipeline:
             df, topic, min_score, self.llm, self.limiter, self.max_workers,
             mapping["title"], mapping["abstract"], mapping["keywords"],
             prompt_criteria, prompt_score,
+            output_lang=language
         )
         _show_samples(full_out, "筛选后", mapping=mapping)
         
@@ -127,7 +130,7 @@ class MLATEPipeline:
     def explore(self, input_csv: str, output_raw_json: str,
                 max_papers: int = None,
                 source_type: str = "auto", researcher_guide: str = None,
-                initial_dims: str = None) -> dict:
+                initial_dims: str = None, language: str = "中文") -> dict:
         """Phase 1: Spontaneous Discovery of sub-categories (Per-paper)"""
         df, mapping = BaseLoader.load(input_csv, source_type)
         _show_data_peek(df, mapping)
@@ -141,6 +144,7 @@ class MLATEPipeline:
             self.max_workers,
             mapping["title"], mapping["abstract"], mapping["keywords"],
             researcher_guide=researcher_guide,
+            output_lang=language
         )
 
         with open(output_raw_json, "w", encoding="utf-8") as f:
@@ -152,7 +156,7 @@ class MLATEPipeline:
     def converge(self, input_raw_json: str, output_taxonomy: str,
                  limit_cats: int = 10, target_dims: str = None,
                  researcher_guide: str = None, source_csv: str = None,
-                 output_csv: str = None) -> dict:
+                 output_csv: str = None, language: str = "中文") -> dict:
         """Phase 2: Intelligent Convergence and Auto-Labeling (Supports Incremental Update)"""
         with open(input_raw_json, encoding="utf-8") as f:
             all_raw_accum = json.load(f)
@@ -188,7 +192,8 @@ class MLATEPipeline:
         new_taxonomy, mapping_table = explore_stage.run_converge(
             raw_accum_to_process, limit_cats, prompt_converge, self.llm, self.limiter,
             researcher_guide=researcher_guide,
-            id_to_title=id_to_title
+            id_to_title=id_to_title,
+            output_lang=language
         )
 
         # 4. Incremental JSON Update
@@ -246,3 +251,78 @@ class MLATEPipeline:
                 logger.success(f"文献标注已增量更新: {output_csv}", f"CSV labels updated incrementally: {output_csv}")
 
         return final_tax
+
+    # ── translate ──
+    def translate(self, input_file: str, output_file: str, target_lang: str = "中文", columns: str = None) -> None:
+        """Translate CSV columns or JSON text values using LLM"""
+        logger.info(f"正在翻译 {input_file} -> {target_lang}...", f"Translating {input_file} to {target_lang}...")
+        
+        ext = Path(input_file).suffix.lower()
+        
+        if ext == ".csv":
+            df = pd.read_csv(input_file)
+            if not columns:
+                logger.error("CSV 翻译需要指定 --cols 参数", "CSV translation requires --cols parameter")
+                return
+            
+            cols_to_translate = [c.strip() for c in columns.split(",") if c.strip()]
+            for col in cols_to_translate:
+                if col not in df.columns:
+                    logger.warning(f"列 {col} 不存在，跳过", f"Column {col} not found, skipping")
+                    continue
+                
+                logger.info(f"  正在翻译列: {col}...", f"  Translating column: {col}...")
+                unique_texts = df[col].dropna().unique()
+                
+                # Batch translate unique texts to save tokens
+                text_map = {}
+                # Determine batch size based on text length
+                avg_len = sum(len(str(t)) for t in unique_texts[:10]) / 10 if len(unique_texts) > 0 else 0
+                batch_size = 1 if avg_len > 500 else (5 if avg_len > 100 else 20)
+                
+                logger.info(f"    检测到平均长度 {int(avg_len)}，采用 BatchSize={batch_size}", 
+                            f"    Avg length {int(avg_len)}, using BatchSize={batch_size}")
+
+                for i in tqdm(range(0, len(unique_texts), batch_size)):
+                    batch = unique_texts[i:i+batch_size]
+                    if batch_size == 1:
+                        # Single long text (like abstract)
+                        prompt = f"请将以下学术文本翻译成{target_lang}，保持专业术语准确，直接返回翻译后的文本：\n\n{batch[0]}"
+                        self.limiter.wait()
+                        res_text = self.llm.chat([{"role": "user", "content": prompt}])
+                        if res_text:
+                            text_map[batch[0]] = res_text
+                    else:
+                        # Multiple short texts (like categories or titles)
+                        prompt = f"请将以下文本列表翻译成{target_lang}，保持专业术语准确，返回 JSON 对象 {{'original': 'translation'}}:\n\n" + json.dumps(list(batch), ensure_ascii=False)
+                        self.limiter.wait()
+                        res = self.llm.chat_json([{"role": "user", "content": prompt}])
+                        if res:
+                            text_map.update(res)
+                
+                df[col] = df[col].map(lambda x: text_map.get(x, x))
+            
+            df.to_csv(output_file, index=False, encoding="utf-8-sig")
+            
+        elif ext == ".json":
+            with open(input_file, encoding="utf-8") as f:
+                data = json.load(f)
+            
+            # Recursive translation for JSON values (simple implementation)
+            def translate_value(val):
+                if isinstance(val, str) and len(val) > 1:
+                    prompt = f"请将以下学术短语或段落翻译成{target_lang}，直接返回翻译后的文本：\n\n{val}"
+                    self.limiter.wait()
+                    return self.llm.chat([{"role": "user", "content": prompt}])
+                elif isinstance(val, list):
+                    return [translate_value(v) for v in val]
+                elif isinstance(val, dict):
+                    return {k: translate_value(v) for k, v in val.items()}
+                return val
+
+            # For JSON, we might want to be more selective, but for now translate everything
+            translated_data = translate_value(data)
+            with open(output_file, "w", encoding="utf-8") as f:
+                json.dump(translated_data, f, ensure_ascii=False, indent=2)
+        
+        logger.success(f"翻译完成: {output_file}", f"Translation completed: {output_file}")

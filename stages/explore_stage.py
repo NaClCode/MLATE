@@ -9,7 +9,7 @@ from logger import logger
 
 def run_explore(df, dims, prompt_tpl, llm, limiter,
                 max_workers, title_col, abstract_col, keywords_col,
-                researcher_guide: str = None):
+                researcher_guide: str = None, output_lang: str = "中文"):
     total = len(df)
     logger.info(f"深度探索论文数: {total} (逐篇处理)", f"Exploring {total} papers (one-by-one)")
 
@@ -32,7 +32,7 @@ def run_explore(df, dims, prompt_tpl, llm, limiter,
         limiter.wait()
         result = llm.chat_json([{"role": "user", "content": render_prompt(prompt_tpl,
             dimensions_desc=dims_desc, paper_id=paper_id, paper_text=pt,
-            researcher_guide=guide_text,
+            researcher_guide=guide_text, output_lang=output_lang
         )}])
         return result
 
@@ -60,7 +60,7 @@ def run_explore(df, dims, prompt_tpl, llm, limiter,
     return full_accum
 
 
-def run_converge(raw_taxonomy, limit_cats, prompt_tpl, llm, limiter, researcher_guide=None, id_to_title=None):
+def run_converge(raw_taxonomy, limit_cats, prompt_tpl, llm, limiter, researcher_guide=None, id_to_title=None, output_lang="中文"):
     """Phase 2: Iterative Taxonomy Convergence & Popularity-based Merging"""
     logger.section(f"第二阶段：智能收敛 (目标每维度 {limit_cats} 类)...", 
                    f"Phase 2: Intelligent Convergence (Target {limit_cats} cats/dim)...")
@@ -95,7 +95,8 @@ def run_converge(raw_taxonomy, limit_cats, prompt_tpl, llm, limiter, researcher_
                 new_labels=chunk_text,
                 existing_taxonomy=existing_text,
                 limit_cats=limit_cats,
-                researcher_guide=researcher_guide or "无特定引导。"
+                researcher_guide=researcher_guide or "无特定引导。",
+                output_lang=output_lang
             )}])
             
             if res:

@@ -30,6 +30,7 @@ def main():
     pf.add_argument("--output", required=True)
     pf.add_argument("--topic", required=True, help="筛选主题，如 'ship digital twin propulsion'")
     pf.add_argument("--min-score", type=float, default=3.0, help="最低评分（1-5），默认 3.0")
+    pf.add_argument("--output-lang", help="LLM 理由与标准的输出语言（默认读取配置 output_lang）")
 
     # ── explore ──
     pe = sub.add_parser("explore", help="主题探索：第一阶段（自发发现草案 - 逐篇分析）")
@@ -38,6 +39,7 @@ def main():
     pe.add_argument("--max-papers", type=int)
     pe.add_argument("--dims", help="初始维度（逗号分隔）")
     pe.add_argument("--guide", help="研究者引导词")
+    pe.add_argument("--output-lang", help="LLM 发现结果的输出语言（默认读取配置 output_lang）")
 
     # ── converge ──
     pcv = sub.add_parser("converge", help="主题探索：第二阶段（智能收敛与总结）")
@@ -48,6 +50,14 @@ def main():
     pcv.add_argument("--dims", help="指定收敛的维度（默认全量）")
     pcv.add_argument("--guide", help="收敛阶段的引导词")
     pcv.add_argument("--source-csv", help="可选：原始 CSV 路径（用于将 ID 映射回论文标题）")
+    pcv.add_argument("--output-lang", help="LLM 收敛定义的输出语言（默认读取配置 output_lang）")
+
+    # ── translate ──
+    ptr = sub.add_parser("translate", help="自动翻译：对 CSV 列或 JSON 内容进行 LLM 翻译")
+    ptr.add_argument("--input", required=True)
+    ptr.add_argument("--output", required=True)
+    ptr.add_argument("--lang", default="中文", help="目标语言（默认中文）")
+    ptr.add_argument("--cols", help="如果是 CSV，指定需要翻译的列名（逗号分隔）")
 
     args = parser.parse_args()
 
@@ -56,6 +66,9 @@ def main():
     lang = args.lang or cfg.get("lang")
     if lang:
         logger.set_lang(lang)
+    
+    # Resolve output language: CLI > Config > Default "中文"
+    output_lang = getattr(args, "output_lang", None) or cfg.get("output_lang") or "中文"
 
     # 处理 config 子命令（不需要 pipeline）
     if args.command == "config":
@@ -69,15 +82,17 @@ def main():
     )
 
     if args.command == "filter":
-        pipe.filter(args.input, args.output, topic=args.topic, min_score=args.min_score, source_type=args.source)
+        pipe.filter(args.input, args.output, topic=args.topic, min_score=args.min_score, source_type=args.source, language=output_lang)
     elif args.command == "explore":
         pipe.explore(args.input, args.output, args.max_papers, 
                      source_type=args.source, researcher_guide=args.guide,
-                     initial_dims=args.dims)
+                     initial_dims=args.dims, language=output_lang)
     elif args.command == "converge":
         pipe.converge(args.input, args.output, limit_cats=args.limit_cats,
                       target_dims=args.dims, researcher_guide=args.guide,
-                      source_csv=args.source_csv, output_csv=args.output_csv)
+                      source_csv=args.source_csv, output_csv=args.output_csv, language=output_lang)
+    elif args.command == "translate":
+        pipe.translate(args.input, args.output, target_lang=args.lang, columns=args.cols)
 
 
 if __name__ == "__main__":

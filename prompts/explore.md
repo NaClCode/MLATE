@@ -17,6 +17,7 @@
 
 ## 输出格式 (严格 JSON)
 请返回一个 JSON 对象，Key 为维度名。
+请注意：所有内容（category, reason）必须使用**{{output_lang}}**撰写。
 
 ```json
 {

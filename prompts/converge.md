@@ -34,6 +34,8 @@
 {{researcher_guide}}
 
 ## 输出格式 (严格 JSON)
+请注意：所有文本字段（name, definition, judgment_suggestions）必须使用**{{output_lang}}**撰写。
+
 ```json
 {
   "refined_categories": [

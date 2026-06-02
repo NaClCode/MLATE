@@ -9,7 +9,7 @@ from logger import logger
 
 def run_filter(df, topic, min_score, llm, limiter, max_workers,
                title_col, abstract_col, keywords_col,
-               prompt_criteria, prompt_score):
+               prompt_criteria, prompt_score, output_lang="中文"):
     """两步法：1) 抽样探索评分标准  2) 逐篇评分 + 筛选"""
     total = len(df)
     logger.info(f"原始论文: {total} 篇", f"Total papers: {total}")
@@ -27,7 +27,7 @@ def run_filter(df, topic, min_score, llm, limiter, max_workers,
     )
     limiter.wait()
     criteria_result = llm.chat_json([{"role": "user", "content": render_prompt(prompt_criteria,
-        sample_count=sample_n, topic=topic, samples_text=samples_text,
+        sample_count=sample_n, topic=topic, samples_text=samples_text, output_lang=output_lang
     )}])
 
     if criteria_result:
@@ -53,7 +53,7 @@ def run_filter(df, topic, min_score, llm, limiter, max_workers,
         pt = build_paper(row, title_col, abstract_col, keywords_col)
         limiter.wait()
         return idx, llm.chat_json([{"role": "user", "content": render_prompt(prompt_score,
-            topic=topic, criteria=criteria_text, paper_text=pt,
+            topic=topic, criteria=criteria_text, paper_text=pt, output_lang=output_lang
         )}])
 
     with ThreadPoolExecutor(max_workers=max_workers) as ex:
