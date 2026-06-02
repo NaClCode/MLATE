@@ -1,273 +1,168 @@
 {
-  "技术路径": {
-    "知识图谱构建": [
-      {
-        "name": "实体关系联合抽取",
-        "definition": "从非结构化文本中同时识别实体和关系，构建知识图谱三元组。",
-        "keywords": "联合抽取, 实体关系, 端到端, 预训练模型, 图注意力",
-        "typical_cases": [
-          "#1: 提出了一种基于预训练模型的端到端联合抽取方法，显著提升了抽取精度。",
-          "#2: 利用图注意力网络建模实体间依赖，实现了复杂关系的高效抽取。"
-        ],
-        "judgment_suggestions": "侧重于模型架构设计以同时处理实体和关系，而非仅实体识别或关系分类。"
-      },
-      {
-        "name": "实体关系抽取",
-        "definition": "从非结构化文本中自动识别实体并抽取实体间语义关系的技术。",
-        "keywords": "实体识别, 关系抽取, 远程监督, 预训练模型",
-        "typical_cases": [
-          "#1: 提出了一种基于远程监督的实体关系抽取方法，利用知识库对齐减少噪声。",
-          "#2: 采用预训练语言模型进行端到端的关系抽取，提升了跨句关系抽取性能。"
-        ],
-        "judgment_suggestions": "侧重于从文本中提取结构化三元组的方法归为此类，而仅利用已有知识图谱进行推理的归为其他类。"
-      }
-    ],
-    "知识图谱推理": [
-      {
-        "name": "基于图神经网络的链接预测",
-        "definition": "利用图神经网络（GNN）学习实体和关系的嵌入，预测缺失的三元组。",
-        "keywords": "图神经网络, 链接预测, 知识图谱补全, 关系感知, 嵌入学习",
-        "typical_cases": [
-          "#3: 提出了一个关系感知的GNN模型，在多个基准数据集上取得了最优链接预测性能。",
-          "#4: 通过引入时序信息增强GNN，有效处理动态知识图谱的推理任务。"
-        ],
-        "judgment_suggestions": "核心是使用GNN进行推理，区别于基于规则或翻译距离的方法。"
-      },
-      {
-        "name": "图神经网络推理",
-        "definition": "利用图神经网络对知识图谱中的实体和关系进行表示学习，并预测缺失链接或进行逻辑推理。",
-        "keywords": "图神经网络, 链接预测, 知识图谱补全, 表示学习",
-        "typical_cases": [
-          "#3: 提出了基于图注意力网络的知识图谱补全模型，通过聚合邻居信息提升链接预测准确率。",
-          "#4: 设计了一种时序图神经网络，用于动态知识图谱的推理。"
-        ],
-        "judgment_suggestions": "核心是使用图神经网络进行表示学习和推理，区别于基于规则或传统嵌入的方法。"
-      }
-    ],
-    "知识图谱应用": [
-      {
-        "name": "知识图谱问答",
-        "definition": "基于知识图谱的问答系统，将自然语言问题转化为知识图谱查询并返回答案。",
-        "keywords": "问答系统, 实体链接, 多跳推理, 语义解析",
-        "typical_cases": [
-          "#5: 构建了一个面向医疗领域的知识图谱问答系统，利用实体链接和关系路径推理回答复杂问题。",
-          "#6: 提出了一种多跳推理方法，结合知识图谱和文本信息进行问答。"
-        ],
-        "judgment_suggestions": "以问答任务为导向，涉及问题理解、实体链接和查询生成，区别于纯知识图谱构建或推理。"
-      }
-    ],
-    "知识表示学习": [
-      {
-        "name": "基于平移距离的模型",
-        "definition": "利用平移距离假设（如h+r≈t）学习实体和关系的低维向量表示，典型模型包括TransE、TransH、TransR等。",
-        "keywords": "TransE, TransH, 平移距离, 知识图谱嵌入, 关系表示",
-        "typical_cases": [
-          "#1: 提出TransE模型，通过简单高效的平移距离假设实现知识图谱嵌入",
-          "#2: 改进TransE的TransH模型，解决一对多关系问题"
-        ],
-        "judgment_suggestions": "若论文核心贡献在于提出或改进基于平移距离的嵌入方法，则归为此类；若仅使用此类模型作为组件，则归为应用类。"
-      },
-      {
-        "name": "基于语义匹配的模型",
-        "definition": "通过张量分解、神经网络等复杂交互函数计算实体和关系的匹配度，如RESCAL、DistMult、ComplEx等。",
-        "keywords": "张量分解, 双线性, 复数嵌入, 语义匹配, RESCAL",
-        "typical_cases": [
-          "#3: 提出DistMult模型，利用双线性对角矩阵简化张量分解",
-          "#4: 提出ComplEx模型，引入复数嵌入以处理对称和反对称关系"
-        ],
-        "judgment_suggestions": "若论文核心在于设计新的语义匹配函数或分解方法，则归为此类；若仅应用现有模型，则归为应用类。"
-      }
-    ],
-    "图神经网络": [
-      {
-        "name": "关系图卷积网络",
-        "definition": "在图卷积网络基础上，显式建模节点间不同类型的关系，如R-GCN。",
-        "keywords": "R-GCN, 关系图卷积, 多关系图, 链接预测",
-        "typical_cases": [
-          "#5: 提出R-GCN模型，通过关系特定的权重矩阵处理多关系图",
-          "#6: 将R-GCN应用于链接预测任务，验证其有效性"
-        ],
-        "judgment_suggestions": "若论文核心在于设计或改进关系感知的图卷积操作，则归为此类；若仅使用标准GCN，则归为其他。"
-      },
-      {
-        "name": "图卷积网络",
-        "definition": "利用图卷积操作聚合邻居信息，学习节点或边的表示，用于知识图谱推理或补全。",
-        "keywords": "图卷积, 邻居聚合, 关系图, 节点表示, 多关系",
-        "typical_cases": [
-          "#3: 提出R-GCN，利用关系图卷积处理多关系图",
-          "#4: 提出CompGCN，结合组合操作进行节点更新"
-        ],
-        "judgment_suggestions": "核心是图卷积操作，区别于基于平移或旋转的嵌入方法。"
-      }
-    ],
-    "表示学习": [
-      {
-        "name": "知识图谱嵌入",
-        "definition": "将知识图谱中的实体和关系映射到低维向量空间，以支持链接预测、关系推理等任务。",
-        "keywords": "嵌入, 表示学习, 链接预测, 平移距离, 复数空间",
-        "typical_cases": [
-          "#1: 提出TransE模型，利用平移假设进行嵌入学习",
-          "#2: 提出RotatE模型，利用复数空间旋转建模对称/反对称关系"
-        ],
-        "judgment_suggestions": "侧重于学习实体和关系的向量表示，而非利用图结构或规则进行推理。"
-      }
-    ],
-    "规则与逻辑推理": [
-      {
-        "name": "规则挖掘与推理",
-        "definition": "从知识图谱中自动学习逻辑规则，或利用已有规则进行推理，以完成知识图谱补全或问答。",
-        "keywords": "规则挖掘, 逻辑推理, Horn子句, 可解释性, 归纳逻辑编程",
-        "typical_cases": [
-          "#5: 提出AMIE+，通过关联规则挖掘发现horn子句",
-          "#6: 提出NeuralLP，利用神经网络学习逻辑程序"
-        ],
-        "judgment_suggestions": "强调可解释的规则或逻辑形式，区别于黑盒的嵌入或图神经网络。"
-      }
-    ]
-  },
   "应用场景": {
-    "智能问答": [
+    "Default": [
       {
-        "name": "知识图谱问答系统",
-        "definition": "基于知识图谱回答自然语言问题，涉及实体链接、关系匹配和答案推理。",
-        "keywords": "知识图谱问答, 多跳推理, 实体链接, 关系匹配, 语义解析",
-        "typical_cases": [
-          "#5: 设计了一个多跳推理问答框架，利用知识图谱路径进行复杂问题解答。",
-          "#6: 结合预训练语言模型和知识图谱嵌入，提升了问答的准确性和鲁棒性。"
+        "name": "大语言模型安全与对齐",
+        "definition": "涉及LLM安全对齐、隐私保护、内容安全防御、平台安全评估、可验证生成等应用场景。",
+        "judgment_suggestions": "包含LLM安全对齐、查询隐私保护、内容安全防御、平台安全评估、可验证生成等标签。",
+        "keywords": [
+          "LLM安全",
+          "对齐",
+          "隐私",
+          "内容安全",
+          "可验证"
         ],
-        "judgment_suggestions": "以知识图谱为核心知识源，区别于纯文本或表格问答。"
-      }
-    ],
-    "问答系统": [
-      {
-        "name": "基于知识图谱的问答",
-        "definition": "利用知识图谱的结构化知识来回答自然语言问题，通常涉及实体链接、关系推理等步骤。",
-        "keywords": "知识图谱问答, 语义解析, SPARQL, 实体链接",
         "typical_cases": [
-          "#7: 提出基于知识图谱的问答系统，通过语义解析将问题转化为SPARQL查询",
-          "#8: 利用知识图谱嵌入增强问答系统的推理能力"
-        ],
-        "judgment_suggestions": "若论文核心在于利用知识图谱进行问答，则归为此类；若仅使用问答作为评估任务，则归为技术评估类。"
+          "《MART: Improving LLM Safety with Multi-round Automatic Red-Teaming》: 论文旨在提升大语言模型的安全性，通过多轮自动红队测试减少不安全响应，摘要提到'improving LLM safety'和'mitigating unsafe behaviors'。",
+          "《WiP: An On-device LLM-based Approach to Query Privacy Protection》: 论文针对用户查询中的隐私泄露问题，提出LLM-QueryGuard工具，用于保护连续用户查询中的隐私。",
+          "《LLM Platform Security: Applying a Systematic Evaluation Framework to OpenAI's ChatGPT Plugins》: 论文提出一个系统评估框架，用于分析LLM平台（如ChatGPT）中第三方插件的安全、隐私和风险，并应用于OpenAI的插件生态系统。",
+          "《Imperceptible Content Poisoning in LLM-Powered Applications》: 论文聚焦于LLM应用中的内容投毒攻击，揭示攻击者如何利用看似无害的内容诱导模型生成恶意响应，并评估现有防御的无效性，属于内容安全场景。",
+          "《LLatrieval: LLM-Verified Retrieval for Verifiable Generation》: 论文标题和摘要明确指出研究针对'verifiable generation'，旨在让LLM生成附带支持文档的文本，使用户可验证答案。"
+        ]
       },
       {
-        "name": "知识图谱问答",
-        "definition": "基于知识图谱回答自然语言问题，涉及实体链接、关系匹配和推理。",
-        "keywords": "问答系统, 语义解析, 多跳推理, 实体链接, 查询图",
-        "typical_cases": [
-          "#11: 提出基于模板的KBQA方法，将问题转化为查询图",
-          "#12: 利用图神经网络进行多跳推理问答"
+        "name": "大语言模型评估与优化",
+        "definition": "涉及LLM性能评估、推理优化、边缘服务优化、评估基准等应用场景。",
+        "judgment_suggestions": "包含LLM评估基准、CPU推理优化、边缘LLM服务优化等标签。",
+        "keywords": [
+          "LLM评估",
+          "推理优化",
+          "边缘服务",
+          "基准"
         ],
-        "judgment_suggestions": "输入为自然语言问题，输出为答案，核心是语义解析与知识图谱查询。"
-      }
-    ],
-    "推荐系统": [
+        "typical_cases": [
+          "《An Empirical Study on Challenges for LLM Application Developers》: 论文聚焦于LLM应用开发者面临的挑战，涉及设计、实现和部署，如摘要所述'LLM development introduces new challenges for AI developers in design, implementation, and deployment'。",
+          "《Fast On-device LLM Inference with NPUs》: 论文聚焦于在移动设备上运行LLM推理，摘要提到'on-device inference for Large Language Models'和'mobile-sized models'。",
+          "《Splitwise: Efficient Generative LLM Inference Using Phase Splitting》: 论文针对生成式大语言模型推理的部署优化，摘要提到'generative large language model (LLM) applications'和'deployments of expensive and power-hungry GPUs'。",
+          "《H2-LLM: Hardware-Dataflow Co-Exploration for Heterogeneous Hybrid-Bonding-based Low-Batch LLM Inference》: 摘要明确指出针对edge-side low-batch LLM inference，如personal chat helper等应用。",
+          "《Why Johnny Can't Prompt: How Non-AI Experts Try (and Fail) to Design LLM Prompts》: 论文研究非AI专家如何设计LLM提示，摘要指出'explore whether non-AI-experts can successfully engage in end-user prompt engineering'。"
+        ]
+      },
       {
-        "name": "知识图谱增强推荐",
-        "definition": "将知识图谱作为辅助信息融入推荐系统，以缓解冷启动和数据稀疏问题，如CKE、KGAT等。",
-        "keywords": "推荐系统, 知识图谱增强, 协同过滤, 图注意力",
-        "typical_cases": [
-          "#9: 提出CKE模型，将知识图谱嵌入与协同过滤结合",
-          "#10: 提出KGAT模型，利用图注意力网络传播用户偏好"
+        "name": "自然语言处理与生成",
+        "definition": "涵盖对话系统、文本生成、问答、意图分类、隐喻检测等应用场景。",
+        "judgment_suggestions": "包含对话系统、文本生成、问答、意图分类、隐喻检测等标签。",
+        "keywords": [
+          "对话系统",
+          "文本生成",
+          "问答",
+          "意图分类"
         ],
-        "judgment_suggestions": "若论文核心在于利用知识图谱改进推荐效果，则归为此类；若仅使用推荐作为应用场景，则归为其他。"
-      }
-    ],
-    "生物医学": [
+        "typical_cases": [
+          "《ST-LLM: Large Language Models Are Effective Temporal Learners》: 论文研究视频LLM以促进视频层面的人机交互，摘要提到'video-based dialogue systems'。",
+          "《Exploring LLM-Based Multi-Agent Situation Awareness for Zero-Trust Space-Air-Ground Integrated Network》: 论文针对Space-air-ground integrated network (SAGIN)的零信任安全，摘要明确提到'zero-trust security for SAGIN'。",
+          "《LLM-Based Multi-Agent Decision-Making: Challenges and Future Directions》: 论文聚焦于多智能体决策中的协作任务，如摘要所述'we focus on the cooperative tasks of multiple agents with a common goal'。",
+          "《LiDAR-LLM: Exploring the Potential of Large Language Models for 3D LiDAR Understanding》: 论文旨在利用LLM理解室外3D场景，涉及3D captioning、grounding、QA等任务。",
+          "《ST-LLM plus : Graph Enhanced Spatio-Temporal Large Language Models for Traffic Prediction》: 论文标题和摘要明确指出ST-LLM+用于traffic prediction，且实验在真实交通数据集上进行。"
+        ]
+      },
       {
-        "name": "药物发现与疾病预测",
-        "definition": "利用知识图谱技术预测药物-靶点相互作用、药物重定位或疾病关联。",
-        "keywords": "药物发现, 药物重定位, 疾病预测, 生物医学知识图谱, 靶点",
-        "typical_cases": [
-          "#7: 利用知识图谱嵌入预测药物-靶点相互作用",
-          "#8: 构建疾病-基因-药物知识图谱进行药物重定位"
+        "name": "特定领域应用",
+        "definition": "涵盖医学、金融、网络安全、驾驶、法律等特定领域的应用场景。",
+        "judgment_suggestions": "包含医学报告生成、金融交易决策、钓鱼网站检测、驾驶疲劳缓解、性骚扰受害者辅助等标签。",
+        "keywords": [
+          "医学",
+          "金融",
+          "网络安全",
+          "驾驶",
+          "法律"
         ],
-        "judgment_suggestions": "数据来源为生物医学数据库，任务涉及药物或疾病相关预测。"
+        "typical_cases": [
+          "《FD-LLM: Large language model for fault diagnosis of complex equipment》: 论文标题和摘要明确针对复杂设备故障诊断，如'FD-LLM: Large language model for fault diagnosis of complex equipment'和'complex equipment fault diagnosis'。",
+          "《Integration of LLM and HumanAI Coordination for Power Dispatching With Connected Electric Vehicles Under SAGVNs》: 摘要中明确提到该框架用于'power dispatching'，即电力调度，具体为'power dispatching tasks with the random connection of EVs in SAGVNs'。",
+          "《EPlus-LLM: A large language model-based computing platform for automated building energy modeling》: 论文提出Eplus-LLM平台用于自动建立建筑能耗模型（BEMs），并提及城市建筑能耗建模（UBEM）等应用。",
+          "《Boosting resilience design of cargo UAVs: a fault diagnosis method utilizing MRKG and LLM-FCT reasoning》: 论文聚焦于货运无人机（cargo UAVs）的故障诊断，以提升其韧性设计，确保物流安全与效率。",
+          "《Csi-LLM: A Novel Downlink Channel Prediction Method Aligned with LLM Pre-Training》: 论文聚焦于下行信道时间预测，是massive MIMO系统的关键技术。"
+        ]
+      },
+      {
+        "name": "软件工程与测试",
+        "definition": "涉及软件缺陷修复、漏洞修复协作、硬件测试生成、API回归测试等应用场景。",
+        "judgment_suggestions": "包含软件缺陷修复、漏洞修复协作、硬件测试生成、API回归测试等标签。",
+        "keywords": [
+          "软件缺陷",
+          "漏洞修复",
+          "硬件测试",
+          "回归测试"
+        ],
+        "typical_cases": [
+          "《VerilogReader: LLM-Aided Hardware Test Generation》: 论文研究将LLM集成到覆盖导向测试生成（CDG）过程中，用于生成硬件设计验证的测试激励。",
+          "《Practically implementing an LLM-supported collaborative vulnerability remediation process: A team-based approach》: 论文聚焦于将LLM集成到网络安全漏洞修复流程中，通过实地研究设计并验证了LLM支持的协作修复过程。",
+          "《The GitHub Recent Bugs Dataset for Evaluating LLM-based Debugging Applications》: 论文提出GHRB框架用于收集真实Java缺陷，以评估基于LLM的调试应用，摘要明确提到'for use in evaluation of LLM-based techniques'和'Debugging'关键词。",
+          "《(Why) Is My Prompt Getting Worse? Rethinking Regression Testing for Evolving LLM APIs》: 论文聚焦于LLM API演化导致的性能回归问题，强调回归测试的必要性，如摘要所述'emphasize the need for and re-examine the concept of regression testing for evolving LLM APIs'。"
+        ]
       }
     ]
   },
-  "评估与基准": {
-    "数据集与基准测试": [
+  "技术路径": {
+    "Default": [
       {
-        "name": "知识图谱评估基准构建",
-        "definition": "创建标准化的数据集和评估指标，用于比较不同知识图谱方法的性能。",
-        "keywords": "基准数据集, 评估指标, 标准化, 鲁棒性, 跨领域",
-        "typical_cases": [
-          "#7: 发布了大规模跨领域知识图谱数据集，并定义了统一的评估协议。",
-          "#8: 提出了针对知识图谱补全任务的鲁棒性评估框架，涵盖多种噪声场景。"
+        "name": "对比学习与特征聚合",
+        "definition": "利用对比学习、特征聚合、细粒度分类检测等技术进行表示学习和分类。",
+        "judgment_suggestions": "涉及对比学习、特征聚合、细粒度分类等。",
+        "keywords": [
+          "对比学习",
+          "特征聚合",
+          "细粒度分类"
         ],
-        "judgment_suggestions": "专注于数据集构建和评估方法，而非具体模型或应用。"
-      }
-    ]
-  },
-  "研究对象": {
-    "通用知识图谱": [
-      {
-        "name": "开放域知识图谱",
-        "definition": "覆盖广泛领域、面向通用知识的知识图谱，如Freebase、Wikidata等。",
-        "keywords": "Freebase, Wikidata, 开放域, 跨语言",
         "typical_cases": [
-          "#7: 研究了基于Freebase的大规模知识图谱补全方法，利用实体类型信息提升性能。",
-          "#8: 提出了一种跨语言知识图谱对齐方法，对齐Wikidata中的多语言实体。"
-        ],
-        "judgment_suggestions": "研究对象为通用知识图谱，不限定特定领域。"
+          "《Strengthening LLM ecosystem security: Preventing mobile malware from manipulating LLM-based applications》: 论文提出EvolveDroid系统，利用多视角特征聚合和对比学习进行模型更新，摘要指出'utilizes different view features...through feature aggregation'和'learns good representation...through contrastive learning'。",
+          "《LLM-DetectAIve: a Tool for Fine-Grained Machine-Generated Text Detection》: 系统支持四类细粒度检测，包括人写、机器生成、机器写后人工化、人写后机器润色，不同于传统的二分类，如'LLM-DetectAIve supports four categories'。"
+        ]
       },
       {
-        "name": "百科类知识图谱",
-        "definition": "以维基百科、百度百科等为数据源构建的大规模通用知识图谱，如DBpedia、YAGO、Freebase等。",
-        "keywords": "DBpedia, YAGO, 维基百科, 通用知识图谱",
-        "typical_cases": [
-          "#11: 基于维基百科构建DBpedia知识图谱",
-          "#12: 从维基百科抽取结构化数据构建YAGO"
+        "name": "强化学习与多智能体系统",
+        "definition": "应用强化学习、多智能体强化学习、子图检测等技术解决复杂决策问题。",
+        "judgment_suggestions": "涉及强化学习、多智能体、子图检测等。",
+        "keywords": [
+          "强化学习",
+          "多智能体",
+          "子图检测"
         ],
-        "judgment_suggestions": "若论文构建或使用的知识图谱来源于百科类网站，则归为此类；若来源于特定领域，则归为领域知识图谱。"
-      }
-    ],
-    "领域知识图谱": [
-      {
-        "name": "医疗知识图谱",
-        "definition": "专注于医疗健康领域的知识图谱，包含疾病、药物、症状等实体及其关系。",
-        "keywords": "医疗, 疾病, 药物, 电子病历",
         "typical_cases": [
-          "#9: 构建了中文医疗知识图谱，并用于辅助诊断。",
-          "#10: 利用医学文献和电子病历抽取实体关系，构建了药物-疾病知识图谱。"
-        ],
-        "judgment_suggestions": "研究对象限定在医疗领域，区别于金融、教育等其他领域。"
+          "《Insight at the right spot: Provide decisive subgraph information to Graph LLM with reinforcement learning》: 论文提出使用强化学习检测关键子图信息，摘要中明确说明'A reinforcement subgraph detection module was designed to search for essential neighborhoods'。",
+          "《VELO: A Vector Database-Assisted Cloud-Edge Collaborative LLM QoS Optimization Framework》: 框架使用向量数据库缓存请求结果，并将优化问题建模为MDP，采用MARL算法决策请求调度。"
+        ]
       },
       {
-        "name": "生物医学知识图谱",
-        "definition": "专注于生物医学领域的知识图谱，如药物、疾病、基因等实体及其关系。",
-        "keywords": "生物医学, 药物重定位, 关系抽取, 领域知识图谱",
-        "typical_cases": [
-          "#13: 构建药物-疾病关联知识图谱用于药物重定位",
-          "#14: 从生物医学文献中抽取关系构建知识图谱"
+        "name": "安全与对抗性攻击",
+        "definition": "研究对抗性攻击、攻击分类与框架构建等安全相关技术。",
+        "judgment_suggestions": "涉及对抗性攻击、攻击分类、安全框架等。",
+        "keywords": [
+          "对抗性攻击",
+          "攻击分类",
+          "安全"
         ],
-        "judgment_suggestions": "若论文构建或使用的知识图谱明确限定在生物医学领域，则归为此类；若为通用领域，则归为通用知识图谱。"
-      }
-    ]
-  },
-  "评估方法": {
-    "性能评估": [
+        "typical_cases": [
+          "《LLM Platform Security: Applying a Systematic Evaluation Framework to OpenAI's ChatGPT Plugins》: 论文通过迭代探索利益相关者如何利用能力发起攻击，构建攻击分类法，并基于此框架进行实证分析。",
+          "《Imperceptible Content Poisoning in LLM-Powered Applications》: 论文系统分析了攻击模式、框架设计漏洞及攻击内容生成，并通过实验验证攻击成功率高达89.60%，属于对抗性攻击技术路径。"
+        ]
+      },
       {
-        "name": "链接预测评估",
-        "definition": "通过预测知识图谱中缺失的链接（实体-关系-实体三元组）来评估模型性能。",
-        "keywords": "链接预测, MRR, Hits@K, 基准数据集",
-        "typical_cases": [
-          "#11: 在WN18RR和FB15k-237数据集上评估了多种知识图谱嵌入模型的链接预测性能。",
-          "#12: 提出了一种新的链接预测评估指标，考虑了预测结果的多样性。"
+        "name": "低代码与可视化编程",
+        "definition": "通过低代码平台、可视化编程工具简化软件开发流程。",
+        "judgment_suggestions": "涉及低代码、可视化编程等。",
+        "keywords": [
+          "低代码",
+          "可视化编程"
         ],
-        "judgment_suggestions": "评估任务为链接预测，使用标准数据集和指标（如MRR、Hits@K）。"
-      }
-    ],
-    "应用效果评估": [
+        "typical_cases": [
+          "《Low-code LLM: Graphical User Interface over Large Language Models》: 摘要明确提到该框架通过六种简单的低代码可视化编程交互，使用户通过图形用户界面融入想法，无需编写繁琐提示。"
+        ]
+      },
       {
-        "name": "问答系统评估",
-        "definition": "通过问答任务评估知识图谱问答系统的准确率和召回率。",
-        "keywords": "问答评估, F1, 准确率, 基准数据集",
-        "typical_cases": [
-          "#13: 在WebQuestions数据集上评估了基于知识图谱的问答系统，使用F1分数衡量。",
-          "#14: 设计了一个医疗问答评估基准，包含复杂问题类型。"
+        "name": "基准测试与检索验证",
+        "definition": "构建基准测试、进行LLM验证检索、向量数据库应用等评估与检索技术。",
+        "judgment_suggestions": "涉及基准测试、检索验证、向量数据库等。",
+        "keywords": [
+          "基准测试",
+          "检索验证",
+          "向量数据库"
         ],
-        "judgment_suggestions": "评估任务为问答，使用问答数据集和指标（如准确率、F1）。"
+        "typical_cases": [
+          "《Open Ko-LLM Leaderboard: Evaluating Large Language Models in Korean with Ko-H5 Benchmark》: 论文构建了包含私有测试集的评估框架，并进行了数据泄露分析和相关性研究，摘要提到'we establish a robust evaluation framework'和'perform data leakage analysis'。",
+          "《LLatrieval: LLM-Verified Retrieval for Verifiable Generation》: 摘要提出LLatrieval方法，核心是'LLM updates the retrieval result until it verifies that the retrieved documents can sufficiently support answering the question'，即LLM迭代验证检索结果。"
+        ]
       }
     ]
   }

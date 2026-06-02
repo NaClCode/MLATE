@@ -32,24 +32,22 @@ def main():
     pf.add_argument("--min-score", type=float, default=3.0, help="最低评分（1-5），默认 3.0")
 
     # ── explore ──
-    pe = sub.add_parser("explore", help="主题探索（批次细化）")
-    pe.add_argument("--input", required=True)
-    pe.add_argument("--output", required=True, help="输出 taxonomy JSON 路径")
-    pe.add_argument("--batch-size", type=int, default=20)
+    pe = sub.add_parser("explore", help="主题探索：第一阶段（自发发现草案 - 逐篇分析）")
+    pe.add_argument("--input", required=True, help="筛选后的 CSV 输入")
+    pe.add_argument("--output", required=True, help="输出原始草案 JSON 路径")
     pe.add_argument("--max-papers", type=int)
-    pe.add_argument("--guide", help="研究者引导词（例如设定主体方向、提供参考示例等）")
+    pe.add_argument("--dims", help="初始维度（逗号分隔）")
+    pe.add_argument("--guide", help="研究者引导词")
 
-    # ── analyze ──
-    pa = sub.add_parser("analyze", help="逐篇维度分析")
-    pa.add_argument("--input", required=True)
-    pa.add_argument("--output", required=True)
-    pa.add_argument("--taxonomy", help="taxonomy JSON 文件路径")
-    pa.add_argument("--max-papers", type=int)
-
-    # ── retry ──
-    pr = sub.add_parser("retry", help="错误重试")
-    pr.add_argument("--input", required=True)
-    pr.add_argument("--output")
+    # ── converge ──
+    pcv = sub.add_parser("converge", help="主题探索：第二阶段（智能收敛与总结）")
+    pcv.add_argument("--input", required=True, help="explore 产出的原始草案 JSON")
+    pcv.add_argument("--output", required=True, help="输出最终收敛后的 taxonomy JSON")
+    pcv.add_argument("--output-csv", help="输出带标签的文献 CSV 路径")
+    pcv.add_argument("--limit-cats", type=int, default=10, help="每个维度保留的分类上限")
+    pcv.add_argument("--dims", help="指定收敛的维度（默认全量）")
+    pcv.add_argument("--guide", help="收敛阶段的引导词")
+    pcv.add_argument("--source-csv", help="可选：原始 CSV 路径（用于将 ID 映射回论文标题）")
 
     args = parser.parse_args()
 
@@ -73,12 +71,13 @@ def main():
     if args.command == "filter":
         pipe.filter(args.input, args.output, topic=args.topic, min_score=args.min_score, source_type=args.source)
     elif args.command == "explore":
-        pipe.explore(args.input, args.output, args.batch_size, args.max_papers, 
-                     source_type=args.source, researcher_guide=args.guide)
-    elif args.command == "analyze":
-        pipe.analyze(args.input, args.output, args.taxonomy, args.max_papers, source_type=args.source)
-    elif args.command == "retry":
-        pipe.retry(args.input, args.output)
+        pipe.explore(args.input, args.output, args.max_papers, 
+                     source_type=args.source, researcher_guide=args.guide,
+                     initial_dims=args.dims)
+    elif args.command == "converge":
+        pipe.converge(args.input, args.output, limit_cats=args.limit_cats,
+                      target_dims=args.dims, researcher_guide=args.guide,
+                      source_csv=args.source_csv, output_csv=args.output_csv)
 
 
 if __name__ == "__main__":

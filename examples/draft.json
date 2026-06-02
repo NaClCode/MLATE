@@ -1,0 +1,1996 @@
+{
+  "应用场景": [
+    {
+      "paper_id": 1,
+      "category": "复杂设备故障诊断",
+      "reason": "论文标题和摘要明确针对复杂设备故障诊断，如'FD-LLM: Large language model for fault diagnosis of complex equipment'和'complex equipment fault diagnosis'。"
+    },
+    {
+      "paper_id": 2,
+      "category": "电力调度",
+      "reason": "摘要中明确提到该框架用于'power dispatching'，即电力调度，具体为'power dispatching tasks with the random connection of EVs in SAGVNs'。"
+    },
+    {
+      "paper_id": 4,
+      "category": "视频对话系统",
+      "reason": "论文研究视频LLM以促进视频层面的人机交互，摘要提到'video-based dialogue systems'。"
+    },
+    {
+      "paper_id": 5,
+      "category": "LLM开发挑战",
+      "reason": "论文聚焦于LLM应用开发者面临的挑战，涉及设计、实现和部署，如摘要所述'LLM development introduces new challenges for AI developers in design, implementation, and deployment'。"
+    },
+    {
+      "paper_id": 3,
+      "category": "空天地一体化网络安全",
+      "reason": "论文针对Space-air-ground integrated network (SAGIN)的零信任安全，摘要明确提到'zero-trust security for SAGIN'。"
+    },
+    {
+      "paper_id": 6,
+      "category": "多智能体协作",
+      "reason": "论文聚焦于多智能体决策中的协作任务，如摘要所述'we focus on the cooperative tasks of multiple agents with a common goal'。"
+    },
+    {
+      "paper_id": 7,
+      "category": "3D场景理解",
+      "reason": "论文旨在利用LLM理解室外3D场景，涉及3D captioning、grounding、QA等任务。"
+    },
+    {
+      "paper_id": 8,
+      "category": "交通预测",
+      "reason": "论文标题和摘要明确指出ST-LLM+用于traffic prediction，且实验在真实交通数据集上进行。"
+    },
+    {
+      "paper_id": 9,
+      "category": "建筑能耗建模",
+      "reason": "论文提出Eplus-LLM平台用于自动建立建筑能耗模型（BEMs），并提及城市建筑能耗建模（UBEM）等应用。"
+    },
+    {
+      "paper_id": 10,
+      "category": "边缘智能",
+      "reason": "论文聚焦于边缘计算中集成多LLM以增强实时数据处理和复杂任务性能，如摘要所述“Edge computing enables real-time data processing...improving latency and performance”以及“multi-LLMs to address these challenges in edge computing”。"
+    },
+    {
+      "paper_id": 11,
+      "category": "通用评估框架",
+      "reason": "论文提出评估LLM代理的二维分类法，涵盖行为、能力、可靠性、安全性等目标，以及交互模式、数据集、指标计算等过程，并强调企业特定挑战，旨在为实际部署提供系统评估框架。"
+    },
+    {
+      "paper_id": 13,
+      "category": "因果发现",
+      "reason": "论文提出LLM驱动的因果发现框架，旨在从数据中恢复因果关系，属于因果发现应用场景。"
+    },
+    {
+      "paper_id": 12,
+      "category": "移动端LLM推理",
+      "reason": "论文聚焦于在移动设备上运行LLM推理，摘要提到'on-device inference for Large Language Models'和'mobile-sized models'。"
+    },
+    {
+      "paper_id": 14,
+      "category": "社交虚拟现实",
+      "reason": "论文在VRChat中部署AI代理，用于社交虚拟现实中的人机交互（摘要：'deployed in VRChat as a Non-playable Character'）"
+    },
+    {
+      "paper_id": 15,
+      "category": "化学信息预测",
+      "reason": "论文使用LLM预测分子的拓扑极性表面积（TPSA），属于化学研究任务。"
+    },
+    {
+      "paper_id": 16,
+      "category": "报告指南制定",
+      "reason": "论文提出了TRIPOD-LLM报告指南，旨在规范LLM在生物医学应用中的报告，属于方法论或标准制定类应用。"
+    },
+    {
+      "paper_id": 18,
+      "category": "临床评估综述",
+      "reason": "论文系统综述了LLM在临床医学中的评估参数和方法，涉及决策支持、诊断和医学教育等应用场景。"
+    },
+    {
+      "paper_id": 17,
+      "category": "联邦学习微调",
+      "reason": "论文针对联邦学习场景下大语言模型的本地微调问题，提出FedBiOT方法，摘要中明确提到'how to perform LLM fine-tuning in federated learning (FL)'。"
+    },
+    {
+      "paper_id": 19,
+      "category": "电信网络赋能",
+      "reason": "论文标题和摘要明确指出LLM用于电信领域，如'LLM-enabled telecom networks'和'LLM-enabled key techniques and telecom applications'。"
+    },
+    {
+      "paper_id": 20,
+      "category": "文本检测",
+      "reason": "论文聚焦于检测LLM生成文本，以缓解滥用并保护艺术表达和社交网络等领域，摘要中明确提到“safeguarding domains like artistic expression and social networks”。"
+    },
+    {
+      "paper_id": 21,
+      "category": "编程教育",
+      "reason": "论文聚焦于将LLM整合到CS1（编程入门课程）中，属于教育应用场景。"
+    },
+    {
+      "paper_id": 22,
+      "category": "专家知识评估",
+      "reason": "论文研究LLM在需要专业知识的任务（如饮食学和心理健康）中作为评估者的局限性，强调人类专家在评估过程中的重要性。"
+    },
+    {
+      "paper_id": 23,
+      "category": "无人机故障诊断",
+      "reason": "论文聚焦于货运无人机（cargo UAVs）的故障诊断，以提升其韧性设计，确保物流安全与效率。"
+    },
+    {
+      "paper_id": 24,
+      "category": "定制化生成设计",
+      "reason": "论文标题和摘要明确聚焦于“generative design for customization”，即面向定制的生成设计，并探讨了人机协作方案。"
+    },
+    {
+      "paper_id": 25,
+      "category": "疾病预测与临床决策支持",
+      "reason": "摘要中明确提到'enhanced disease prediction'和'clinical decision support'，且实验任务为诊断预测。"
+    },
+    {
+      "paper_id": 26,
+      "category": "老年用户交互",
+      "reason": "研究通过20次情境访谈调查老年人对ChatGPT的感知，关注老年群体对LLM聊天机器人的看法和采用因素，旨在促进年龄包容性AI工具的开发。"
+    },
+    {
+      "paper_id": 27,
+      "category": "LLM推理部署",
+      "reason": "论文针对生成式大语言模型推理的部署优化，摘要提到'generative large language model (LLM) applications'和'deployments of expensive and power-hungry GPUs'。"
+    },
+    {
+      "paper_id": 28,
+      "category": "社交机器人检测",
+      "reason": "论文聚焦于检测社交媒体中由大语言模型驱动的机器人，摘要明确指出'Detecting social media bots'和'LLM-driven bots in online social networks'。"
+    },
+    {
+      "paper_id": 29,
+      "category": "跨语言情感分析",
+      "reason": "论文研究跨语言情感分析，通过翻译将外语文本转为英语后分析情感，摘要中提及'cross-lingual sentiment analysis'和'foreign language sentiment analysis'。"
+    },
+    {
+      "paper_id": 30,
+      "category": "边缘端低批量推理",
+      "reason": "摘要明确指出针对edge-side low-batch LLM inference，如personal chat helper等应用。"
+    },
+    {
+      "paper_id": 31,
+      "category": "非专家提示设计",
+      "reason": "论文研究非AI专家如何设计LLM提示，摘要指出'explore whether non-AI-experts can successfully engage in end-user prompt engineering'。"
+    },
+    {
+      "paper_id": 32,
+      "category": "LLM应用商店分析",
+      "reason": "论文聚焦于LLM应用商店的现状与未来，涉及数据挖掘、安全风险、开发辅助和市场动态等应用场景。"
+    },
+    {
+      "paper_id": 33,
+      "category": "模型评估",
+      "reason": "论文聚焦于评估LLM聊天助手，使用LLM作为裁判，并引入MT-bench和Chatbot Arena基准。"
+    },
+    {
+      "paper_id": 35,
+      "category": "信道预测",
+      "reason": "论文聚焦于下行信道时间预测，是massive MIMO系统的关键技术。"
+    },
+    {
+      "paper_id": 34,
+      "category": "数据标注",
+      "reason": "论文聚焦于利用LLM进行文本标注，并通过人机协作提高标注质量，摘要中明确提到'data annotators'和'text annotation'。"
+    },
+    {
+      "paper_id": 36,
+      "category": "医学文献评估",
+      "reason": "论文评估了基于LLM的医疗研究对MI-CLEAR-LLM检查表的依从性，该检查表旨在提高LLM在医学应用中准确度报告的透明度和可重复性。"
+    },
+    {
+      "paper_id": 37,
+      "category": "模型评估分析",
+      "reason": "论文聚焦于LLM的自动成对评估（side-by-side evaluation），旨在帮助用户理解模型表现差异，属于模型评估场景。"
+    },
+    {
+      "paper_id": 38,
+      "category": "语义通信",
+      "reason": "论文提出基于大语言模型的语义通信（LLM-SemCom），旨在实现6G通信中从任务导向到通用的语义传输，摘要明确提及“semantic communication represents a paradigm shift in 6G communications”。"
+    },
+    {
+      "paper_id": 39,
+      "category": "专业沟通培训",
+      "reason": "论文聚焦LLM在专业沟通培训中的使用，如摘要所述“increasing use in professional communication training”和“professional communication training programs”。"
+    },
+    {
+      "paper_id": 40,
+      "category": "推荐系统",
+      "reason": "论文提出EAGER-LLM框架，旨在增强大语言模型作为推荐器的能力，并在三个公开基准上验证其有效性。"
+    },
+    {
+      "paper_id": 41,
+      "category": "多机器人任务规划",
+      "reason": "论文提出SMART-LLM框架，用于将高级任务指令转化为多机器人任务计划，涉及任务分解、联盟形成和任务分配，并在仿真和真实场景中验证。"
+    },
+    {
+      "paper_id": 42,
+      "category": "电力系统优化",
+      "reason": "论文聚焦于解决电力系统中的最优潮流（OPF）问题，摘要中明确提到“solving Optimal Power Flow (OPF) problems in power systems”和“operational planning and grid management”。"
+    },
+    {
+      "paper_id": 44,
+      "category": "时序知识图谱推理",
+      "reason": "论文提出LLM-DR方法用于时序知识图谱外推（TKG extrapolation），属于时序知识图谱推理场景。"
+    },
+    {
+      "paper_id": 43,
+      "category": "LLM输出评估",
+      "reason": "论文聚焦于使用LLM辅助评估LLM输出，并确保评估与人类偏好对齐，摘要中明确提到'aligning LLM-assisted evaluation of LLM outputs with human preferences'。"
+    },
+    {
+      "paper_id": 45,
+      "category": "信息搜索与偏见",
+      "reason": "论文研究LLM驱动的对话搜索系统对信息多样性的影响，涉及选择性暴露和回音室效应。"
+    },
+    {
+      "paper_id": 46,
+      "category": "LLM部署加速",
+      "reason": "论文旨在通过算法-硬件协同设计提升大语言模型在低精度下的推理效率，摘要明确提到'enable efficient LLM acceleration at low weight precision'和'achieves an average of 1.69x and 1.48x speedups'。"
+    },
+    {
+      "paper_id": 47,
+      "category": "隐私风险评估",
+      "reason": "论文聚焦于用户在使用LLM对话代理时的隐私风险与收益权衡，摘要提到'privacy risks that concern users the most'和'users are constantly faced with trade-offs between privacy, utility, and convenience'。"
+    },
+    {
+      "paper_id": 48,
+      "category": "家庭机器人导航",
+      "reason": "摘要指出3D视觉定位是家庭机器人的关键技能，用于导航、操作物体和回答问题。"
+    },
+    {
+      "paper_id": 49,
+      "category": "对话式问答模拟",
+      "reason": "论文提出使用LLM模拟教师-学生对话，用于生成对话式问答数据，属于CQA系统交互模拟场景。"
+    },
+    {
+      "paper_id": 50,
+      "category": "数字孪生网络",
+      "reason": "论文提出LLM-Twin框架，旨在解决数字孪生网络（DTNs）中的通信、计算和安全挑战，摘要明确提及'LLM empowered DTNs framework'和'LLM-based semantic-level DTNs'。"
+    },
+    {
+      "paper_id": 51,
+      "category": "机器人操控",
+      "reason": "论文聚焦于基于LLM的机器人操控任务，通过人机协作提升复杂轨迹规划与环境推理能力。"
+    },
+    {
+      "paper_id": 52,
+      "category": "机器人任务规划",
+      "reason": "论文研究LLM在机器人复杂、长时序任务规划中的应用，摘要提到'complex, long-horizon sequential task planning challenges in robotics'。"
+    },
+    {
+      "paper_id": 53,
+      "category": "医疗文档生成",
+      "reason": "论文标题和摘要明确聚焦于医疗文档（medical documentation）和医疗笔记撰写（medical note-writing tasks）。"
+    },
+    {
+      "paper_id": 54,
+      "category": "内容审核",
+      "reason": "论文研究使用LLM辅助在线内容审核，摘要明确提到'content moderation'和'identify rule violations on Reddit'。"
+    },
+    {
+      "paper_id": 55,
+      "category": "风速预测",
+      "reason": "摘要明确指出论文聚焦于风速预测，如'Accurately forecasting wind speed is crucial'和'wind speed forecasting'。"
+    },
+    {
+      "paper_id": 56,
+      "category": "自动论文评审",
+      "reason": "论文评估LLM作为评审员的能力，涉及评分预测和评审生成任务，属于自动论文评审场景。"
+    },
+    {
+      "paper_id": 57,
+      "category": "个性化对话",
+      "reason": "论文旨在通过用户嵌入实现LLM的个性化响应，摘要中明确提到'personalized responses'和'personalized AI'。"
+    },
+    {
+      "paper_id": 58,
+      "category": "临床伦理分析",
+      "reason": "论文聚焦于LLM在医疗保健中的伦理问题，通过分析临床医生的在线讨论，识别出伦理关注主题（如透明决策、公平性、隐私等），属于临床伦理分析场景。"
+    },
+    {
+      "paper_id": 59,
+      "category": "决策辅助",
+      "reason": "论文研究LLM搜索对决策速度、准确性和过度依赖的影响，属于决策辅助场景。"
+    },
+    {
+      "paper_id": 61,
+      "category": "压力管理",
+      "reason": "论文标题和摘要明确聚焦于压力管理，如'stress management'、'personalized stress management'、'real-time stress relief'。"
+    },
+    {
+      "paper_id": 60,
+      "category": "社交网络影响扩散模拟",
+      "reason": "论文提出LLM-AIDSim框架，用于模拟社交网络中的影响扩散，并分析话题演化与用户话语，如摘要所述“simulate influence diffusion in social networks”和“simulating topic evolution and tracking user discourse”。"
+    },
+    {
+      "paper_id": 62,
+      "category": "人机交互模式",
+      "reason": "论文聚焦于人类与LLM的交互模式，提出四种交互模式（标准提示、用户界面、基于上下文、代理促进者），并分析其应用场景。"
+    },
+    {
+      "paper_id": 64,
+      "category": "边缘-云协同推理",
+      "reason": "论文提出动态token级边缘-云协作方法，旨在利用边缘和云资源提升推理性能，适用于LLM推理场景。"
+    },
+    {
+      "paper_id": 63,
+      "category": "学术文本检测",
+      "reason": "论文聚焦于检测LLM生成的学术文本，特别是医学论文引言，以维护学术诚信。"
+    },
+    {
+      "paper_id": 66,
+      "category": "创意设计辅助",
+      "reason": "摘要提到LLMs可帮助设计师收集信息、寻找竞争对手和生成替代方案，且论文聚焦于帮助新手设计师反思和改进创意。"
+    },
+    {
+      "paper_id": 65,
+      "category": "方面级情感分析",
+      "reason": "论文标题和摘要明确指出研究任务为Aspect-based Sentiment Analysis (ABSA)，即方面级情感分析。"
+    },
+    {
+      "paper_id": 67,
+      "category": "日志解析",
+      "reason": "论文聚焦于日志解析任务，旨在将原始日志转换为结构化格式，用于系统诊断、安全分析和性能优化。"
+    },
+    {
+      "paper_id": 68,
+      "category": "LLM安全性评估",
+      "reason": "论文聚焦于评估LLM的越狱漏洞，摘要提到“large-scale LLM jailbreak susceptibility assessment”，即大规模LLM越狱脆弱性评估。"
+    },
+    {
+      "paper_id": 69,
+      "category": "知识图谱工程",
+      "reason": "论文评估LLM在RDF Turtle和SPARQL语言上的能力，以辅助知识图谱工程（KGE）任务，摘要中明确提到'foundational skills to assist with various KGE tasks'。"
+    },
+    {
+      "paper_id": 70,
+      "category": "边缘LLM服务",
+      "reason": "论文提出Edge-LLM框架，旨在边缘计算环境中高效部署和微调大语言模型，提升服务质量。"
+    },
+    {
+      "paper_id": 71,
+      "category": "LLM推理服务",
+      "reason": "论文针对LLM推理的约束感知资源调度，旨在最大化吞吐量并满足延迟约束，适用于多种NLP工作负载。"
+    },
+    {
+      "paper_id": 72,
+      "category": "定性数据分析",
+      "reason": "论文主张使用LLM聊天机器人进行定性研究，并强调其在加速研究过程、辅助主题分析、揭示研究者背景假设和使编码决策更透明方面的作用。"
+    },
+    {
+      "paper_id": 73,
+      "category": "大模型高效部署",
+      "reason": "论文旨在解决LLM内存占用大和计算成本高的问题，实现高效部署，如摘要所述'Their large memory footprint and high computational cost hinder efficient deployment'。"
+    },
+    {
+      "paper_id": 74,
+      "category": "翼型设计优化",
+      "reason": "摘要指出该方法用于翼型参数化，并在RAE 5214翼型的设计优化中取得更好结果。"
+    },
+    {
+      "paper_id": 75,
+      "category": "日常助手",
+      "reason": "论文标题和摘要明确提到LLM agents作为daily assistant，研究其在日常任务（如机票预订、信用卡支付）中的应用。"
+    },
+    {
+      "paper_id": 76,
+      "category": "硬件安全分析",
+      "reason": "论文聚焦于硬件安全中的信息流追踪（IFT），旨在确保机密性和完整性，并针对IP级和SoC级漏洞测试用例进行实验。"
+    },
+    {
+      "paper_id": 77,
+      "category": "供应链谈判",
+      "reason": "论文研究LLM代理在自主供应链合同谈判中的应用，摘要明确提及'supply chain contract negotiations'和'supply chain bargaining'。"
+    },
+    {
+      "paper_id": 79,
+      "category": "旅游推荐系统",
+      "reason": "论文在旅游推荐系统（Varmland region in Sweden）上测试，摘要提到'tourism recommendation system'。"
+    },
+    {
+      "paper_id": 81,
+      "category": "医学领域应用",
+      "reason": "论文标题和摘要明确指出框架用于医学领域，如'customize general-purpose LLMs for diverse downstream medical applications'和'experiments on 9 medical tasks'。"
+    },
+    {
+      "paper_id": 80,
+      "category": "LLM服务系统优化",
+      "reason": "论文旨在通过真实工作负载数据集BurstGPT优化LLM服务系统的QoS和吞吐量，摘要中提到'optimize LLM serving systems'和'system evaluation and trace provisioning'。"
+    },
+    {
+      "paper_id": 78,
+      "category": "LLM训练故障诊断",
+      "reason": "论文聚焦于大规模LLM训练过程中的故障诊断，摘要提到'failures are inevitable during the training process'和'effective and efficient failure diagnosis to reduce the cost of LLM training'。"
+    },
+    {
+      "paper_id": 82,
+      "category": "教育反馈系统",
+      "reason": "论文提出LLM驱动的反馈系统，用于数据库系统课程的概念设计学习，帮助学生改进设计技能。"
+    },
+    {
+      "paper_id": 83,
+      "category": "学术诚信检测",
+      "reason": "论文关注LLM生成文本对学术诚信的威胁，并评估检测器在计算教育中的表现。"
+    },
+    {
+      "paper_id": 85,
+      "category": "LLM评估安全",
+      "reason": "论文研究LLM-as-a-Judge场景下的提示注入攻击，涉及LLM-powered search、RLAIF、tool selection等应用。"
+    },
+    {
+      "paper_id": 84,
+      "category": "软件帮助寻求",
+      "reason": "论文研究LLM助手在复杂软件中帮助用户寻求帮助的效果，摘要提到'helping users navigate complex, feature-rich software'和'help-seeking'。"
+    },
+    {
+      "paper_id": 86,
+      "category": "隐私保护LLM适配",
+      "reason": "摘要指出该方法旨在解决数据隐私问题，实现安全的LLM适配，如'secure LLM adaptation under constrained local resources'和'privacy-preserving LLM inference and fine-tuning'。"
+    },
+    {
+      "paper_id": 88,
+      "category": "模型可解释性",
+      "reason": "论文旨在通过可视化训练数据归因来理解LLM文本生成的原理，增强模型可信度，属于模型可解释性应用。"
+    },
+    {
+      "paper_id": 87,
+      "category": "学术医学指南",
+      "reason": "论文旨在为学术医学中LLM的使用提供指南，如摘要所述'provide a guideline for future utilization in academia'。"
+    },
+    {
+      "paper_id": 89,
+      "category": "摘要质量评估",
+      "reason": "论文标题和摘要明确指出聚焦于LLM生成摘要的自动评估，如'A Field Guide to Automatic Evaluation of LLM-Generated Summaries'和'Evaluating LLM-generated summaries'。"
+    },
+    {
+      "paper_id": 90,
+      "category": "推理分割",
+      "reason": "论文提出推理分割任务，旨在通过大语言模型推理理解隐含用户意图并分割目标，如摘要所述：'a novel task that enables segmentation system to reason and interpret implicit user intention via large language model reasoning and then segment the corresponding target'。"
+    },
+    {
+      "paper_id": 91,
+      "category": "领域专用推理",
+      "reason": "论文针对需要专业知识的推理任务（如情感社会学、医学），提出WTS框架以增强LLM在缺乏专门训练时的领域专用能力。"
+    },
+    {
+      "paper_id": 92,
+      "category": "文本水印保护",
+      "reason": "论文提出用于保护LLM生成文本的知识产权，防止恶意利用如垃圾邮件和抄袭。"
+    },
+    {
+      "paper_id": 93,
+      "category": "人机交互研究",
+      "reason": "论文聚焦于HCI研究中应用LLM模拟数据，讨论其机遇与挑战，如摘要所述'how human subjects research can be conducted in HCI studies'。"
+    },
+    {
+      "paper_id": 94,
+      "category": "安全分布式训练",
+      "reason": "论文针对分布式LLM训练中的安全威胁，提出基于TEE和模型切分的安全框架，摘要明确提到'secure distributed LLM based on model slicing'。"
+    },
+    {
+      "paper_id": 95,
+      "category": "自主控制决策",
+      "reason": "论文研究LLM增强自主控制系统在环境扰动和模型不确定性下的决策，应用于无人机等复杂动态环境。"
+    },
+    {
+      "paper_id": 96,
+      "category": "LLM微调成本估算",
+      "reason": "论文旨在理解LLM微调的性能并估算其成本，摘要中明确提到'develop and validate an analytical model to estimate the cost of LLM fine-tuning on the cloud'。"
+    },
+    {
+      "paper_id": 97,
+      "category": "社交媒体内容检测",
+      "reason": "摘要指出LLM生成内容在社交媒体平台广泛存在，并关注检测以缓解错误信息、数据偏见等问题。"
+    },
+    {
+      "paper_id": 98,
+      "category": "模型压缩",
+      "reason": "论文聚焦于通过SVD优化截断来压缩大型语言模型，摘要明确提到'effective compression techniques'和'SVD-based LLM compression method'。"
+    },
+    {
+      "paper_id": 99,
+      "category": "语音指令跟随",
+      "reason": "论文聚焦于语音-LLM的指令跟随能力，提出AlignFormer实现零样本语音翻译和语音问答，摘要中明确提到'unlocks the instruction following capability for speech-LLM'和'perform zero-shot speech translation (ST) and speech question answering (SQA) tasks'。"
+    },
+    {
+      "paper_id": 100,
+      "category": "个人信息提取攻击",
+      "reason": "论文研究利用LLM从公开资料中大规模提取个人信息（如姓名、电话、邮箱），并评估其作为其他安全攻击（如鱼叉式钓鱼）的基石。"
+    },
+    {
+      "paper_id": 101,
+      "category": "LLM网站指纹攻击",
+      "reason": "论文针对LLM网站访问场景，提出细粒度网站指纹攻击，以识别浏览网站和内容类型。"
+    },
+    {
+      "paper_id": 102,
+      "category": "教育与培训",
+      "reason": "摘要明确指出平台旨在为专业人士、学生和教育者提供LLM驱动无人机的实践培训，如'provide the upcoming generation of professionals, students, and educators with the knowledge and abilities'和'educate and train users'。"
+    },
+    {
+      "paper_id": 103,
+      "category": "文本自动评估",
+      "reason": "论文研究LLM-as-a-judge范式，用于自动化文本评估，如摘要所述：'uses large language models (LLMs) for automated text evaluation'。"
+    },
+    {
+      "paper_id": 104,
+      "category": "大模型服务",
+      "reason": "论文聚焦于部署大语言模型（LLMs）的服务系统，摘要提到'enhancing the performance of LLM service systems'和'LLM workloads'。"
+    },
+    {
+      "paper_id": 105,
+      "category": "多LLM集成推理",
+      "reason": "论文提出动态集成多个LLM专家的方法，旨在利用不同LLM的优势，提升多样输入下的性能。"
+    },
+    {
+      "paper_id": 106,
+      "category": "物流运输优化",
+      "reason": "摘要指出物流运输在现实世界中至关重要，HFVRP是许多物流场景中的关键优化挑战。"
+    },
+    {
+      "paper_id": 107,
+      "category": "软件工程",
+      "reason": "论文研究LLM辅助代码开发与手动开发的碳足迹对比，属于软件工程中的可持续软件开发领域。"
+    },
+    {
+      "paper_id": 109,
+      "category": "LLM幻觉检测",
+      "reason": "论文旨在减少LLM产生的错误（hallucinations），通过聚类检测虚构内容。"
+    },
+    {
+      "paper_id": 108,
+      "category": "边缘LLM服务路由",
+      "reason": "论文聚焦于在边缘计算环境中为移动和物联网设备路由LLM请求，以保障服务质量，如摘要所述：'multiple LLMs are usually deployed at the network edge... route user requests... to ensure acceptable quality-of-service'。"
+    },
+    {
+      "paper_id": 111,
+      "category": "自动驾驶系统",
+      "reason": "论文标题和摘要明确指出该LLM-OS用于automated vehicles，即自动驾驶车辆。"
+    },
+    {
+      "paper_id": 110,
+      "category": "网络搜索增强",
+      "reason": "论文旨在将LLM转化为相关、负责且可信的搜索者，改进网络搜索中的结果有效性和精确性，摘要提到'improve relevance and provide direct answers in web searches'。"
+    },
+    {
+      "paper_id": 112,
+      "category": "硬件安全数据库构建",
+      "reason": "论文旨在解决硬件安全领域缺乏综合数据库和基准的问题，并开发了包含10,000个脆弱FSM设计的Vul-FSM数据库。"
+    },
+    {
+      "paper_id": 113,
+      "category": "人格检测",
+      "reason": "论文研究从社交媒体帖子中检测人格特质，摘要明确提到'personality detection aims to detect one's personality traits'。"
+    },
+    {
+      "paper_id": 114,
+      "category": "硬件设计自动化",
+      "reason": "论文提出ChatCPU平台，用于ASIC设计和验证流程，从初始规格到RTL实现，属于硬件设计自动化场景。"
+    },
+    {
+      "paper_id": 115,
+      "category": "视频问答",
+      "reason": "论文针对视频理解中的问答任务，提出帧选择方法以提升下游视频M-LLM在视频问答基准上的性能，如ActivityNet、NExT-QA等。"
+    },
+    {
+      "paper_id": 116,
+      "category": "文本排序",
+      "reason": "论文研究零样本LLM排序器，通过细粒度相关性标签改进文档排序性能，属于信息检索中的文本排序应用。"
+    },
+    {
+      "paper_id": 117,
+      "category": "教育评估自动化",
+      "reason": "论文研究使用自动化基准测试框架评估LLM在计算机科学概念清单上的表现，旨在支持更可重复、可复现和严谨的教育评估研究。"
+    },
+    {
+      "paper_id": 118,
+      "category": "隐私风险评估",
+      "reason": "论文提出LLM-PBE工具，用于系统评估LLM中的数据隐私风险，涵盖攻击与防御策略，分析模型大小、数据特征等影响因素。"
+    },
+    {
+      "paper_id": 119,
+      "category": "信息检索评估",
+      "reason": "论文聚焦于LLM在信息检索（IR）评估中作为相关性判断工具的应用，摘要明确提到'Relevance judgments for information retrieval (IR) evaluation'。"
+    },
+    {
+      "paper_id": 120,
+      "category": "虚假新闻检测",
+      "reason": "论文旨在检测LLM生成的孟加拉语新闻，以防止错误信息传播，摘要中明确提到'prevent the possible dissemination of misinformation'。"
+    },
+    {
+      "paper_id": 121,
+      "category": "医学影像诊断",
+      "reason": "论文研究LLM辅助放射科住院医师进行脑MRI鉴别诊断，摘要明确提到'radiology residents' performance in brain MRI differential diagnosis'。"
+    },
+    {
+      "paper_id": 122,
+      "category": "大模型训练",
+      "reason": "论文标题和摘要明确指出针对Large Language Model Training，且实验在不同模型规模下进行。"
+    },
+    {
+      "paper_id": 123,
+      "category": "推荐系统",
+      "reason": "论文标题和摘要明确指出研究针对LLM-enhanced recommendation，旨在提升推荐系统的效率。"
+    },
+    {
+      "paper_id": 125,
+      "category": "内容真实性检测",
+      "reason": "论文旨在检测LLM生成内容的真实性，摘要提到'enhance the reliability of LLM-generated content and its practical applicability in real-world scenarios'。"
+    },
+    {
+      "paper_id": 126,
+      "category": "网络配置管理",
+      "reason": "摘要中明确提到“transport network configuration management”，即传输网络配置管理。"
+    },
+    {
+      "paper_id": 124,
+      "category": "高等教育学习",
+      "reason": "论文研究大学生使用ChatGPT进行学习时的意义建构，摘要提到'LLM interfaces...are widely used by students in higher education'。"
+    },
+    {
+      "paper_id": 127,
+      "category": "LLM服务调度",
+      "reason": "论文聚焦于LLM服务提供商对复合LLM应用的高效调度，摘要提到'LLM service providers in serving and scheduling them efficiently'。"
+    },
+    {
+      "paper_id": 128,
+      "category": "临床决策支持",
+      "reason": "论文评估LLM用于SINS评分计算，旨在辅助临床医生决策，摘要提到'as a clinical decision-support tool'。"
+    },
+    {
+      "paper_id": 129,
+      "category": "LLM应用优化",
+      "reason": "论文聚焦于优化基于大语言模型（LLM）的应用，如摘要所述“LLM-based applications consist of both LLM and non-LLM components”，并针对端到端延迟进行优化。"
+    },
+    {
+      "paper_id": 131,
+      "category": "安全风险检测",
+      "reason": "论文聚焦于识别LLM应用商店中的安全风险，如恶意应用、后门和有害内容生成。"
+    },
+    {
+      "paper_id": 130,
+      "category": "多模态查询优化",
+      "reason": "论文研究LLM在多模态数据上的查询优化能力，提出LaPuda优化器，摘要中明确提到'query optimization over multi-modal data'。"
+    },
+    {
+      "paper_id": 132,
+      "category": "编程教育评估",
+      "reason": "论文研究学生在编程任务中使用LLM（ChatGPT）时的批判性思维，通过眼动追踪、问卷和访谈分析，属于编程教育场景。"
+    },
+    {
+      "paper_id": 133,
+      "category": "知识推理与验证",
+      "reason": "论文研究将LLM知识转化为逻辑程序，实现声音推理方法，验证LLM输出与预期用途的一致性，并扩展推理能力。"
+    },
+    {
+      "paper_id": 134,
+      "category": "具身AI规划",
+      "reason": "论文针对真实世界具身AI任务中的开放世界规划，摘要明确提到'Open-world planning with incomplete knowledge is crucial for real-world embodied AI tasks'。"
+    },
+    {
+      "paper_id": 136,
+      "category": "网络调查数据质量",
+      "reason": "论文研究如何通过提示注入检测LLM驱动的机器人，以保护网络调查的数据质量和完整性。"
+    },
+    {
+      "paper_id": 135,
+      "category": "文档检索增强",
+      "reason": "论文研究LLM在查询扩展中的应用，旨在提升文档检索效果，摘要提到'enhances retrieval'和'evaluating the effects on retrieval performance'。"
+    },
+    {
+      "paper_id": 137,
+      "category": "操作技能培训",
+      "reason": "论文研究LLM驱动的动觉辅助在操作技能学习中的应用，如飞行技能获取（'FlightAxis learns flight skills from manuals and guides forearm movements during simulated flight tasks'）。"
+    },
+    {
+      "paper_id": 138,
+      "category": "电商搜索相关性",
+      "reason": "论文标题和摘要明确指出应用于电商搜索场景，如'query-item relevance modeling'和'Taobao search ad scene'。"
+    },
+    {
+      "paper_id": 139,
+      "category": "服务选择与优化",
+      "reason": "文中提到该方法应用于LLM服务的选择和进一步优化（selection and further optimization of LLM services）。"
+    },
+    {
+      "paper_id": 140,
+      "category": "安全攻防应用",
+      "reason": "摘要中明确提到综述了LLM-based agents在安全相关应用中的使用，包括网络攻击和网络防御（'ranging from enabling cyberattacks to strengthening cyber defense'）。"
+    },
+    {
+      "paper_id": 141,
+      "category": "LLM推理加速",
+      "reason": "论文旨在加速大语言模型推理，摘要提到'efficient LLM inference'和'speed up LLM inference'。"
+    },
+    {
+      "paper_id": 142,
+      "category": "LLM安全防护",
+      "reason": "论文聚焦于防止提示工程攻击和训练数据泄露，属于LLM安全应用场景。"
+    },
+    {
+      "paper_id": 143,
+      "category": "社交媒体人机交互",
+      "reason": "论文研究微博用户与平台赋能的大语言模型代理CommentRobert之间的交互，属于社交媒体场景下的人机交互。"
+    },
+    {
+      "paper_id": 144,
+      "category": "移动应用探索",
+      "reason": "论文标题和摘要明确指出针对移动应用的自动化探索，如“automated mobile app exploration for mobile apps”和“20 typical apps”。"
+    },
+    {
+      "paper_id": 145,
+      "category": "数据标注系统",
+      "reason": "论文提出MEGAnno+系统，用于人类与LLM协作进行数据标注，属于数据标注应用场景。"
+    },
+    {
+      "paper_id": 146,
+      "category": "LLM集成脚本",
+      "reason": "论文聚焦于LLM-integrated scripts，即集成大语言模型的脚本，摘要中明确提到'LLM-integrated scripts'和'LLM scripting'。"
+    },
+    {
+      "paper_id": 147,
+      "category": "数据标注质量评估",
+      "reason": "论文研究众包与LLM在数据标注任务上的标注质量，并比较聚合标签的质量。"
+    },
+    {
+      "paper_id": 148,
+      "category": "静态恶意软件分析",
+      "reason": "论文标题和摘要明确指出研究聚焦于使用LLM支持静态恶意软件分析，如'Feasibility Study for Supporting Static Malware Analysis Using LLM'和'static malware analysis is one of the most important tasks in cybersecurity'。"
+    },
+    {
+      "paper_id": 149,
+      "category": "对话系统评估",
+      "reason": "论文在人类-AI信息寻求任务中评估对话系统，预测整体用户满意度。"
+    },
+    {
+      "paper_id": 150,
+      "category": "文献计量分析",
+      "reason": "论文对2019-2024年间77个顶级计算机科学会议中的LLM相关论文进行出版趋势分析，属于文献计量学范畴。"
+    },
+    {
+      "paper_id": 151,
+      "category": "攻击推荐系统",
+      "reason": "论文提出CheatAgent框架，用于攻击LLM赋能的推荐系统，摘要明确提到'attack LLM-Empowered RecSys'。"
+    },
+    {
+      "paper_id": 152,
+      "category": "医疗文献处理",
+      "reason": "论文提到开发用于收集和评审医学研究论文的LLM代理，即'developing LLM agents for collecting and reviewing medical research papers'。"
+    },
+    {
+      "paper_id": 153,
+      "category": "隐私风险评估",
+      "reason": "论文聚焦于LLM应用生态中的数据收集实践，旨在揭示隐私风险，如摘要所述'bring transparency in data practices'和'present significant privacy risks'。"
+    },
+    {
+      "paper_id": 154,
+      "category": "LLM服务可持续性",
+      "reason": "论文聚焦于LLM服务阶段的碳排放问题，旨在减少其环境影响，属于应用场景中的可持续性优化。"
+    },
+    {
+      "paper_id": 155,
+      "category": "性能测试",
+      "reason": "论文摘要明确指出其目标是进行性能评估和系统测试，如'rigorous performance testing'和'performance evaluation and system testing'。"
+    },
+    {
+      "paper_id": 157,
+      "category": "钓鱼网站检测",
+      "reason": "论文标题和摘要明确指出PhishSense用于检测钓鱼网站，属于网络安全应用。"
+    },
+    {
+      "paper_id": 156,
+      "category": "金融交易决策",
+      "reason": "论文聚焦于股票交易，提出LLM增强的强化学习框架，用于金融交易决策。"
+    },
+    {
+      "paper_id": 158,
+      "category": "异常检测",
+      "reason": "摘要明确提到该方法用于异常检测任务，并基于UNSW-NB15数据集进行监督微调，实验评估了异常数据的识别率。"
+    },
+    {
+      "paper_id": 159,
+      "category": "文档标注工具",
+      "reason": "论文介绍PDFChatAnnotator用于从PDF目录收集多模态数据，属于文档标注工具。"
+    },
+    {
+      "paper_id": 160,
+      "category": "图像地理定位",
+      "reason": "论文研究任务为图像地理定位，即确定图像拍摄地点（摘要：'determining the location where an image was captured'）。"
+    },
+    {
+      "paper_id": 161,
+      "category": "推荐系统",
+      "reason": "论文标题和摘要明确指出该方法用于推荐系统，如'LLM-AC: Large Language Models Enhanced Actor-Critic for Recommendation Systems'，并在实验中应用于电影和图书领域。"
+    },
+    {
+      "paper_id": 162,
+      "category": "移动端LLM定制",
+      "reason": "论文针对移动设备上多应用共享MoE基础LLM时，各应用需使用私有数据定制适配器的问题，提出LiteMoE框架，支持移动应用在设备上高效微调定制适配器。"
+    },
+    {
+      "paper_id": 163,
+      "category": "硬件测试生成",
+      "reason": "论文研究将LLM集成到覆盖导向测试生成（CDG）过程中，用于生成硬件设计验证的测试激励。"
+    },
+    {
+      "paper_id": 164,
+      "category": "意图分类",
+      "reason": "论文聚焦于意图分类任务，摘要中明确提到'minimizing intent classification errors'和'evaluate on intent classification datasets'。"
+    },
+    {
+      "paper_id": 165,
+      "category": "LLM训练性能诊断",
+      "reason": "论文提出LLMPrism系统，用于黑盒性能诊断，针对生产环境中的LLM训练平台，摘要明确提到'black-box performance diagnosis system for LLM training platforms'。"
+    },
+    {
+      "paper_id": 166,
+      "category": "对话安全",
+      "reason": "论文标题和摘要明确聚焦于LLM对话安全，涉及攻击、防御和评估。"
+    },
+    {
+      "paper_id": 167,
+      "category": "驾驶疲劳缓解",
+      "reason": "摘要明确研究LLM语音助手在缓解被动驾驶疲劳中的应用，旨在提升驾驶表现与安全。"
+    },
+    {
+      "paper_id": 168,
+      "category": "对话推荐系统",
+      "reason": "论文旨在构建大规模对话推荐数据集，以促进对话推荐系统（CRS）研究。"
+    },
+    {
+      "paper_id": 169,
+      "category": "慢性病自我管理",
+      "reason": "摘要明确提到用于慢性病自我管理的医疗聊天机器人（medical chatbots for chronic disease self-management）。"
+    },
+    {
+      "paper_id": 170,
+      "category": "边缘云优化",
+      "reason": "论文提出ECO-LLM，用于动态调整边缘和云计算层之间的应用任务放置，以响应工作负载变化，属于边缘云优化场景。"
+    },
+    {
+      "paper_id": 172,
+      "category": "性骚扰受害者辅助",
+      "reason": "摘要明确指出该聊天机器人旨在帮助性骚扰受害者，提供支持、敏感且信息丰富的回答。"
+    },
+    {
+      "paper_id": 171,
+      "category": "云安全漏洞检测",
+      "reason": "论文标题和摘要明确指出针对智能云应用的安全漏洞分析，如'LLM-CloudSec: Large Language Model Empowered Automatic and Deep Vulnerability Analysis for Intelligent Clouds'和'Vulnerability detection is a critical step in ensuring the security of cloud applications'。"
+    },
+    {
+      "paper_id": 173,
+      "category": "领域特定应用",
+      "reason": "论文聚焦于提升LLM在特定领域应用中的性能，如摘要中所述“improve Large Language Model (LLM) performance on domain specific applications”。"
+    },
+    {
+      "paper_id": 174,
+      "category": "LLM推理服务性能优化",
+      "reason": "论文聚焦于LLM推理服务的性能表征与优化，旨在满足性能需求并降低成本。"
+    },
+    {
+      "paper_id": 175,
+      "category": "医学报告生成",
+      "reason": "摘要指出该方法用于生成结构化胸部X光报告，属于医学影像报告自动生成场景。"
+    },
+    {
+      "paper_id": 176,
+      "category": "漏洞修复协作",
+      "reason": "论文聚焦于将LLM集成到网络安全漏洞修复流程中，通过实地研究设计并验证了LLM支持的协作修复过程。"
+    },
+    {
+      "paper_id": 178,
+      "category": "LLM集成应用安全",
+      "reason": "论文聚焦于LLM集成应用中的漏洞识别与缓解，摘要提到'LLM-integrated applications serve as middleware'并引入新攻击面。"
+    },
+    {
+      "paper_id": 177,
+      "category": "软件缺陷修复",
+      "reason": "论文提出GHRB框架用于收集真实Java缺陷，以评估基于LLM的调试应用，摘要明确提到'for use in evaluation of LLM-based techniques'和'Debugging'关键词。"
+    },
+    {
+      "paper_id": 179,
+      "category": "信息检索系统",
+      "reason": "论文研究LLM生成内容对IR系统的影响，摘要提到'IR systems in the LLM era are facing a new challenge'和'quantitative evaluation of IR models'。"
+    },
+    {
+      "paper_id": 180,
+      "category": "LLM水印工具",
+      "reason": "论文介绍MARKLLM是一个用于LLM水印的开源工具包，旨在支持研究人员和公众理解、实现和评估LLM水印技术。"
+    },
+    {
+      "paper_id": 181,
+      "category": "隐喻检测与推理",
+      "reason": "论文聚焦于隐喻检测任务，旨在区分隐喻与字面表达，并推理其理解过程。"
+    },
+    {
+      "paper_id": 182,
+      "category": "LLM服务系统",
+      "reason": "论文提出Parrot系统，旨在优化LLM应用的端到端性能，属于LLM服务系统场景。"
+    },
+    {
+      "paper_id": 183,
+      "category": "LLM API回归测试",
+      "reason": "论文聚焦于LLM API演化导致的性能回归问题，强调回归测试的必要性，如摘要所述'emphasize the need for and re-examine the concept of regression testing for evolving LLM APIs'。"
+    },
+    {
+      "paper_id": 184,
+      "category": "问答聊天机器人",
+      "reason": "论文标题和摘要明确指出构建LLM QA聊天机器人，用于组织信息检索。"
+    },
+    {
+      "paper_id": 185,
+      "category": "LLM安全对齐",
+      "reason": "论文旨在提升大语言模型的安全性，通过多轮自动红队测试减少不安全响应，摘要提到'improving LLM safety'和'mitigating unsafe behaviors'。"
+    },
+    {
+      "paper_id": 186,
+      "category": "新闻事实核查",
+      "reason": "论文标题和摘要明确提到用于事实核查新闻声明（fact checking news claims），并在两个真实世界新闻声明验证数据集上评估。"
+    },
+    {
+      "paper_id": 187,
+      "category": "LLM推理服务",
+      "reason": "论文标题和摘要明确针对LLM推理服务系统，如'LLM inference serving systems'和'LLM serving systems'。"
+    },
+    {
+      "paper_id": 189,
+      "category": "查询隐私保护",
+      "reason": "论文针对用户查询中的隐私泄露问题，提出LLM-QueryGuard工具，用于保护连续用户查询中的隐私。"
+    },
+    {
+      "paper_id": 188,
+      "category": "CPU推理优化",
+      "reason": "论文研究在CPU上进行LLM推理的性能，并提出优化策略，摘要中明确提到'explores new opportunities for leveraging CPUs in LLM inference'和'propose potential optimization strategies tailored to enhance the performance of LLM inference on CPUs'。"
+    },
+    {
+      "paper_id": 191,
+      "category": "数字取证分析",
+      "reason": "论文提出针对LLM集成应用的数字取证分析方法，用于提示注入攻击的取证分析（A novel approach to digital forensic analysis of LLM-integrated applications is presented for prompt injection attacks）。"
+    },
+    {
+      "paper_id": 190,
+      "category": "移动安全检测",
+      "reason": "论文聚焦于Android平台恶意软件检测，以保护LLM应用生态安全，摘要明确提到'We pay attention to Android malware'和'preventing mobile malware from manipulating LLM-based applications'。"
+    },
+    {
+      "paper_id": 192,
+      "category": "图学习预测",
+      "reason": "论文旨在提升LLM在图学习任务中的预测性能，摘要提到'perform graph-learning task'和'Experiments on five graph learning datasets'。"
+    },
+    {
+      "paper_id": 193,
+      "category": "LLM平台安全评估",
+      "reason": "论文提出一个系统评估框架，用于分析LLM平台（如ChatGPT）中第三方插件的安全、隐私和风险，并应用于OpenAI的插件生态系统。"
+    },
+    {
+      "paper_id": 194,
+      "category": "复杂任务交互",
+      "reason": "摘要指出利用LLM处理复杂任务具有挑战性，而Low-code LLM框架旨在实现更可控和稳定的响应，并展示了四种典型应用。"
+    },
+    {
+      "paper_id": 195,
+      "category": "内容安全防御",
+      "reason": "论文聚焦于LLM应用中的内容投毒攻击，揭示攻击者如何利用看似无害的内容诱导模型生成恶意响应，并评估现有防御的无效性，属于内容安全场景。"
+    },
+    {
+      "paper_id": 196,
+      "category": "LLM评估基准",
+      "reason": "论文提出Open Ko-LLM Leaderboard和Ko-H5 Benchmark作为评估韩语大语言模型的工具，摘要明确说明'vital tools for evaluating Large Language Models (LLMs) in Korean'。"
+    },
+    {
+      "paper_id": 198,
+      "category": "边缘LLM服务优化",
+      "reason": "论文针对云数据中心部署LLM时边缘用户的响应延迟和成本问题，提出边缘缓存优化QoS，属于边缘计算场景。"
+    },
+    {
+      "paper_id": 197,
+      "category": "可验证生成",
+      "reason": "论文标题和摘要明确指出研究针对'verifiable generation'，旨在让LLM生成附带支持文档的文本，使用户可验证答案。"
+    },
+    {
+      "paper_id": 199,
+      "category": "学术教育检测",
+      "reason": "摘要提到系统用于检测机器生成文本，特别关注教育和学术领域中的潜在滥用，如'raises concerns about potential misuse, particularly within educational and academic domains'。"
+    }
+  ],
+  "技术路径": [
+    {
+      "paper_id": 1,
+      "category": "多模态大语言模型",
+      "reason": "摘要中提出基于MM-LLM的方法，包括模态对齐训练、模糊语义嵌入、可学习提示嵌入和LORA微调，如'proposes a new fault diagnosis method based on MM-LLM'和'Multimodal Large Language Model (MM-LLM)'。"
+    },
+    {
+      "paper_id": 2,
+      "category": "LLM引导强化学习",
+      "reason": "摘要指出框架'LLM-D3PG'结合了'Large Language Model (LLM)'与'dual Deep Deterministic Policy Gradient (D3PG)'，利用自然语言指令指导调度策略生成，属于LLM引导的强化学习方法。"
+    },
+    {
+      "paper_id": 4,
+      "category": "时空序列建模",
+      "reason": "论文提出ST-LLM，在LLM内部进行时空序列建模，摘要明确'Spatial-Temporal sequence modeling inside LLM'。"
+    },
+    {
+      "paper_id": 5,
+      "category": "实证研究方法",
+      "reason": "论文采用实证研究方法，通过爬取和分析论坛问题来构建挑战分类，如摘要所述'we crawl and analyze 29,057 relevant questions... construct a taxonomy of challenges'。"
+    },
+    {
+      "paper_id": 3,
+      "category": "LLM多智能体态势感知",
+      "reason": "论文提出LLM-SA方法，利用多个LLM智能体进行态势感知，摘要指出'LLM-SA is a novel situation awareness method that explores the multiple agents of large language model'。"
+    },
+    {
+      "paper_id": 6,
+      "category": "LLM基础框架",
+      "reason": "论文综述了基于LLM的单智能体和多智能体决策框架，如摘要所述'we survey the existing LLM-based single-agent and multi-agent decision-making frameworks'。"
+    },
+    {
+      "paper_id": 7,
+      "category": "多模态对齐",
+      "reason": "通过三阶段训练策略和Position-Aware Transformer将3D LiDAR数据与LLM语言嵌入对齐。"
+    },
+    {
+      "paper_id": 8,
+      "category": "图增强大语言模型",
+      "reason": "摘要提出通过图增强（proximity-based adjacency matrix）和部分冻结图注意力模块（PFGA）改进LLM，并采用LoRA微调策略。"
+    },
+    {
+      "paper_id": 9,
+      "category": "大语言模型微调",
+      "reason": "通过微调T5模型将自然语言描述转换为EnergyPlus建模文件，实现自动化建模。"
+    },
+    {
+      "paper_id": 10,
+      "category": "多LLM协作",
+      "reason": "论文核心探讨多LLM的集成与协作，包括动态编排、资源调度和跨域知识转移，如摘要中“dynamic orchestration, resource scheduling, and cross-domain knowledge transfer”以及“multiple specialized LLMs collaborate”。"
+    },
+    {
+      "paper_id": 11,
+      "category": "评估方法与基准",
+      "reason": "论文聚焦于评估过程，包括交互模式、数据集与基准、指标计算方法及工具，并讨论了企业级评估挑战，如角色访问、可靠性保证、动态交互和合规性。"
+    },
+    {
+      "paper_id": 13,
+      "category": "LLM驱动专家系统",
+      "reason": "论文利用大语言模型作为因果专家，通过生成协调先验来约束结构学习，属于LLM驱动的专家系统技术路径。"
+    },
+    {
+      "paper_id": 12,
+      "category": "NPU卸载与优化",
+      "reason": "论文提出利用NPU卸载来加速预填充阶段，通过三级重构（提示、张量、块级）提升效率，摘要明确'utilizing on-device Neural Processing Unit (NPU) offloading'。"
+    },
+    {
+      "paper_id": 14,
+      "category": "大语言模型驱动",
+      "reason": "系统基于GPT-4大语言模型生成上下文相关响应和面部表情、身体姿态（摘要：'leverages GPT-4, a Large Language Model'）"
+    },
+    {
+      "paper_id": 15,
+      "category": "提示优化与增强生成",
+      "reason": "论文结合了增强生成和机器学习驱动的提示优化来提升LLM性能，如摘要所述。"
+    },
+    {
+      "paper_id": 16,
+      "category": "专家共识与迭代",
+      "reason": "指南通过加速德尔菲过程和专家共识开发，并作为动态文档持续更新，体现了基于专家意见和迭代优化的技术路径。"
+    },
+    {
+      "paper_id": 18,
+      "category": "通用与医学LLM",
+      "reason": "论文指出通用域LLM（如ChatGPT和GPT-4）占评估的93.55%，而医学域LLM仅占6.45%，并分析了评估参数如准确性。"
+    },
+    {
+      "paper_id": 17,
+      "category": "模型压缩与适配器",
+      "reason": "方法涉及服务器生成压缩LLM并对其性能对齐，客户端微调压缩模型中的轻量适配器，摘要指出'our method involves the server generating a compressed LLM'和'clients fine-tune a lightweight yet important part of the compressed model, referred to as an adapter'。"
+    },
+    {
+      "paper_id": 19,
+      "category": "预训练与微调",
+      "reason": "摘要提到'After pre-training and fine-tuning, LLMs can perform diverse downstream tasks'，并详细介绍了模型架构、预训练、微调等。"
+    },
+    {
+      "paper_id": 20,
+      "category": "混合检测方法",
+      "reason": "论文综述了水印技术、统计检测器和神经检测器等多种方法，并提及人工辅助方法，摘要指出“Recent advances stem from innovations in watermarking techniques, statistics-based detectors, and neural-based detectors. Human-assisted methods also play a crucial role.”"
+    },
+    {
+      "paper_id": 21,
+      "category": "课程整合",
+      "reason": "论文描述如何将LLM融入课程设计，包括调整教学内容、评估方式和项目设计，属于技术整合路径。"
+    },
+    {
+      "paper_id": 22,
+      "category": "LLM-as-Judge",
+      "reason": "论文探讨了使用LLM自身评估LLM输出的方法（LLM-as-a-judge），并与人类专家进行对比，分析其一致性和局限性。"
+    },
+    {
+      "paper_id": 23,
+      "category": "知识图谱与大模型推理",
+      "reason": "提出整合多元关系知识图谱（MRKG）与大语言模型少样本思维链（LLM-FCT）的方法，用于故障知识表示与多跳推理。"
+    },
+    {
+      "paper_id": 24,
+      "category": "人机协作与知识增强",
+      "reason": "摘要提出基于设计知识特征的过程框架，并识别三种人机协作方案，强调LLM的知识库和交互能力在定制化生成设计中的主动角色。"
+    },
+    {
+      "paper_id": 25,
+      "category": "大语言模型增强的多级建模",
+      "reason": "摘要指出'LLM-DG, a multi-level health event prediction framework enhanced by large language models'，并具体描述'LLM performs semantic enhancement'和'synchronously models inter-patient and intra-patient relationships'。"
+    },
+    {
+      "paper_id": 26,
+      "category": "用户感知研究",
+      "reason": "采用定性访谈方法，探究老年人对LLM聊天机器人的民间理论、与搜索引擎的比较、常见应用看法及采用影响因素，属于用户感知与行为研究路径。"
+    },
+    {
+      "paper_id": 27,
+      "category": "阶段拆分调度",
+      "reason": "论文提出将推理请求分为提示计算和令牌生成两个阶段，并部署到不同机器上，摘要明确说明'Splitwise, a model deployment and scheduling technique that splits the two phases of LLM inference requests on to separate machines'。"
+    },
+    {
+      "paper_id": 28,
+      "category": "混合专家与图神经网络",
+      "reason": "模型核心模块包括'mixture of experts module'和'graph module with graph sample and aggregation networks'，摘要中明确提及。"
+    },
+    {
+      "paper_id": 29,
+      "category": "集成模型与翻译",
+      "reason": "提出集成transformer和LLM的模型，结合神经机器翻译进行情感分析，摘要中明确'ensemble model of transformers and a large language model'和'using two neural machine translation models'。"
+    },
+    {
+      "paper_id": 30,
+      "category": "硬件-数据流协同探索",
+      "reason": "提出H2-LLM架构，结合hybrid bonding技术，并采用data-centric dataflow抽象和DSE框架进行协同优化。"
+    },
+    {
+      "paper_id": 31,
+      "category": "用户行为分析",
+      "reason": "论文通过设计探针观察用户提示设计行为，摘要提到'participants explored prompt designs opportunistically, not systematically'，属于用户行为研究。"
+    },
+    {
+      "paper_id": 32,
+      "category": "生态系统与治理",
+      "reason": "论文探讨了利益相关者关系、技术进步、伦理考量和治理框架，属于生态系统层面的技术路径分析。"
+    },
+    {
+      "paper_id": 33,
+      "category": "LLM作为裁判",
+      "reason": "论文探讨使用强LLM作为裁判评估模型，分析偏差并提出缓解方案，验证与人类偏好的一致性。"
+    },
+    {
+      "paper_id": 35,
+      "category": "LLM预训练对齐",
+      "reason": "提出Csi-LLM方法，通过将无线数据与自然语言模态对齐，利用LLM的next-token生成能力进行信道预测。"
+    },
+    {
+      "paper_id": 34,
+      "category": "人机协作验证",
+      "reason": "提出多步骤人机协作方法：LLM生成标签和解释，验证器评估质量，人工重新标注低分标签，摘要中详细描述了这一流程。"
+    },
+    {
+      "paper_id": 36,
+      "category": "报告质量评估",
+      "reason": "论文通过系统检索PubMed，提取并分析了159项研究在LLM识别、随机性处理、提示词细节等六个方面的报告情况，属于对LLM研究报告质量的评估方法。"
+    },
+    {
+      "paper_id": 37,
+      "category": "可视化分析",
+      "reason": "论文提出LLM Comparator，一种新的视觉分析工具（visual analytics tool），通过交互式可视化支持评估结果的分析与解释。"
+    },
+    {
+      "paper_id": 38,
+      "category": "大语言模型驱动",
+      "reason": "论文核心创新在于利用大语言模型（LLM）进行语义处理，包括结构化语义三元组表示、无知识库的LLM语义处理以及检索增强生成（RAG）个性化，摘要指出“LLM-SemCom incorporates three key innovations”。"
+    },
+    {
+      "paper_id": 39,
+      "category": "序列-范畴分析",
+      "reason": "论文采用Sequential-Categorial Analysis方法，结合Conversation Analysis和Membership Categorization Analysis，分析人机交互中的文化刻板印象。"
+    },
+    {
+      "paper_id": 40,
+      "category": "生成式推荐",
+      "reason": "论文提出decoder-only的生成式推荐框架，通过双源知识索引、非侵入式多尺度对齐重构和退火适配器，融合行为与语义信息。"
+    },
+    {
+      "paper_id": 41,
+      "category": "大语言模型驱动",
+      "reason": "框架利用大语言模型（LLMs）通过少样本提示范式，执行任务分解、联盟形成和任务分配等阶段。"
+    },
+    {
+      "paper_id": 42,
+      "category": "大语言模型+图嵌入",
+      "reason": "论文提出PowerGraph-LLM框架，结合图表示和表格表示来查询大语言模型（LLMs），并引入上下文学习和微调协议，摘要中提及“combines graph and tabular representations of power grids to effectively query LLMs”和“in-context learning and fine-tuning protocols for LLMs”。"
+    },
+    {
+      "paper_id": 44,
+      "category": "扩散模型+大语言模型",
+      "reason": "方法结合扩散模型生成规则，并利用大语言模型（LLM）的语义信息进行约束和优化，如摘要所述'harnesses diffusion models to generate rules...amalgamating the rich semantic insights of LLMs'。"
+    },
+    {
+      "paper_id": 43,
+      "category": "混合主动对齐",
+      "reason": "论文提出混合主动方法（mixed-initiative approach），通过EvalGen界面自动生成评估标准并利用人类反馈选择实现，摘要中描述'provides automated assistance...asks humans to grade...feedback is used to select implementations'。"
+    },
+    {
+      "paper_id": 45,
+      "category": "LLM对话搜索",
+      "reason": "论文聚焦于LLM驱动的对话搜索系统，并实验了具有意见偏见的LLM如何改变用户行为。"
+    },
+    {
+      "paper_id": 46,
+      "category": "混合精度量化",
+      "reason": "算法方面采用细粒度数据类型适应，对不同权重组使用不同数值类型进行量化，摘要指出'introduces fine-grained data type adaptation that uses a different numerical data type to quantize a group of weights'。"
+    },
+    {
+      "paper_id": 47,
+      "category": "用户实证研究",
+      "reason": "论文采用实证方法，包括分析真实对话和半结构化访谈，摘要指出'analyzed sensitive disclosures in real-world ChatGPT conversations and conducted semi-structured interviews with 19 LLM-based CA users'。"
+    },
+    {
+      "paper_id": 48,
+      "category": "LLM驱动的零样本",
+      "reason": "摘要提出LLM-Grounder，利用LLM分解复杂查询并评估空间关系，无需标注数据，实现零样本开放词汇3D视觉定位。"
+    },
+    {
+      "paper_id": 49,
+      "category": "零样本LLM交互",
+      "reason": "采用零样本提示的GPT-4模型分别扮演学生和教师角色，通过LLM-to-LLM交互生成对话，无需人工标注。"
+    },
+    {
+      "paper_id": 50,
+      "category": "大模型赋能语义通信",
+      "reason": "论文基于大语言模型（LLM）设计数字孪生语义网络（DTSNs），实现高效通信和计算，并采用'mini-giant model collaboration scheme'处理多模态数据，摘要指出'based on LLM, we propose digital twin semantic networks'。"
+    },
+    {
+      "paper_id": 51,
+      "category": "人机协作增强",
+      "reason": "提出结合GPT-4、YOLO感知、遥操作和动态运动基元（DMP）的方法，通过人类示教增强LLM机器人性能。"
+    },
+    {
+      "paper_id": 52,
+      "category": "迭代自优化框架",
+      "reason": "论文提出ISR-LLM框架，通过迭代自优化过程改进LLM规划，摘要描述'iterative self-refinement process'和'three sequential steps: preprocessing, planning, and iterative self-refinement'。"
+    },
+    {
+      "paper_id": 53,
+      "category": "领域微调与优化",
+      "reason": "摘要提到训练针对特定医疗任务的优化LLM，包括微调（finetuning）、检索（retrieval）、预训练（pretraining）等，并比较模型大小、训练数据和流水线设计。"
+    },
+    {
+      "paper_id": 54,
+      "category": "LLM推理",
+      "reason": "论文探索LLM作为审核者进行规则推理，摘要指出'LLM-Mod reasons about posts'并分析其推理能力。"
+    },
+    {
+      "paper_id": 55,
+      "category": "时空交叉注意力",
+      "reason": "论文提出STCA-LLM框架，核心是'spatial-temporal cross-attention'模块，用于建立空间和时间嵌入的连接。"
+    },
+    {
+      "paper_id": 56,
+      "category": "大语言模型评估",
+      "reason": "论文使用GPT-3.5和GPT-4进行实验，并提出RR-MCQ数据集评估模型能力，属于大语言模型评估技术路径。"
+    },
+    {
+      "paper_id": 57,
+      "category": "跨模态融合",
+      "reason": "论文将用户时间线视为一种独立模态，通过用户嵌入与LLM的交叉注意力机制进行融合，摘要中提及'treats user timelines as a distinct modality'和'cross-attention'。"
+    },
+    {
+      "paper_id": 58,
+      "category": "主题建模与定性分析",
+      "reason": "采用无监督机器学习（LDA主题建模）和结构化定性分析方法，从3049条帖子中提取伦理主题，技术路径为混合方法。"
+    },
+    {
+      "paper_id": 59,
+      "category": "LLM搜索",
+      "reason": "论文比较LLM搜索与传统搜索，并探索颜色高亮系统减少过度依赖，核心是LLM搜索技术路径。"
+    },
+    {
+      "paper_id": 61,
+      "category": "可穿戴+LLM",
+      "reason": "摘要中强调'wearable-integrated LLM chatbots'，结合可穿戴设备检测生理信号和LLM生成个性化干预。"
+    },
+    {
+      "paper_id": 60,
+      "category": "大语言模型增强智能体建模",
+      "reason": "论文将大语言模型集成到基于智能体的建模中，以生成语言级响应，如摘要所述“integrates large language models (LLMs) into agent-based modelling”和“allowing agents to generate language-level responses”。"
+    },
+    {
+      "paper_id": 62,
+      "category": "交互分类体系",
+      "reason": "论文通过系统分析HCI论文，开发了人类-LLM交互流的四个关键阶段（规划、促进、迭代、测试）和四种交互模式的分类体系。"
+    },
+    {
+      "paper_id": 64,
+      "category": "小模型与大模型协作",
+      "reason": "论文采用SLM（如TinyLlama）在边缘设备与云端LLM进行token级交互，通过混合SLM和LLM实现可控成本下的高质量推理。"
+    },
+    {
+      "paper_id": 63,
+      "category": "零样本重排序检测",
+      "reason": "提出基于依赖解析树重排序文本并计算相似度（Rscore）的零样本检测方法，结合对数似然特征。"
+    },
+    {
+      "paper_id": 66,
+      "category": "结构化模板交互",
+      "reason": "论文提出通过结构化模板（而非聊天）与LLM交互，开发了Jamplate插件，将LLM能力集成到设计模板中。"
+    },
+    {
+      "paper_id": 65,
+      "category": "提示工程与优化",
+      "reason": "摘要提出BYD-OBS-ABSA框架，利用自适应的指令优化（self-adaptive bootstrap instructions optimization）和上下文增强策略（in-context augmentation strategies）来提升LLM在ABSA任务上的表现，属于提示工程与优化技术路径。"
+    },
+    {
+      "paper_id": 67,
+      "category": "大语言模型增强",
+      "reason": "提出LogParser-LLM，集成大语言模型能力，融合语义与统计信息，无需超参数调优和标注数据，实现在线解析。"
+    },
+    {
+      "paper_id": 68,
+      "category": "模糊测试方法",
+      "reason": "论文提出LLM-FUZZER，受模糊测试启发，使用种子选择和变异机制生成越狱提示，摘要中明确“Inspired by fuzz testing”。"
+    },
+    {
+      "paper_id": 69,
+      "category": "LLM基准测试",
+      "reason": "论文通过6个LLM-KG-Bench任务对15个LLM版本进行评测，关键词包括'LLM benchmarking'，摘要中提及'measure the LLM response quality using 6 LLM-KG-Bench tasks'。"
+    },
+    {
+      "paper_id": 70,
+      "category": "协同调度与量化",
+      "reason": "框架采用自适应量化策略、FM缓存机制和VDF调度算法，以加速LLM推理和微调，减少GPU开销。"
+    },
+    {
+      "paper_id": 71,
+      "category": "调度优化",
+      "reason": "通过最优执行调度、资源分配和两种调度策略（Round-Robin和Workload-Aware）实现约束感知的推理优化。"
+    },
+    {
+      "paper_id": 72,
+      "category": "技术反思性",
+      "reason": "论文提出使用LLM聊天机器人需要技术反思性，包括检查模型偏见、研究者-算法交互、批判性评估、透明度、方法论反思性和伦理考量。"
+    },
+    {
+      "paper_id": 73,
+      "category": "算法-硬件协同设计",
+      "reason": "论文提出OFQ-LLM，一种算法-硬件协同设计方案，采用离群值灵活量化，如摘要所述'OFQ-LLM, an algorithm-hardware co-design solution that adopts outlier-flexing quantization'。"
+    },
+    {
+      "paper_id": 74,
+      "category": "大语言模型符号回归",
+      "reason": "摘要提出基于预训练大语言模型的符号回归方法，利用LLM生成和演化特征变换函数。"
+    },
+    {
+      "paper_id": 75,
+      "category": "规划-执行",
+      "reason": "摘要指出采用plan-then-execute方式，agent进行逐步规划和逐步执行，并强调用户参与各阶段。"
+    },
+    {
+      "paper_id": 76,
+      "category": "大语言模型驱动",
+      "reason": "论文提出LLM-IFT，利用大语言模型（LLM）进行结构化推理和层次化依赖分析，通过多步LLM调用实现IFT。"
+    },
+    {
+      "paper_id": 77,
+      "category": "检索增强生成",
+      "reason": "摘要指出'tailored retrieval-augmented generation (RAG) configurations can enhance negotiation outcomes'，表明RAG是核心技术路径。"
+    },
+    {
+      "paper_id": 79,
+      "category": "LLM-RAG质量保证",
+      "reason": "论文提出测试框架评估LLM-RAG系统的质量特性，包括功能正确性和额外功能属性，摘要明确'Quality Assurance for LLM-RAG Systems'。"
+    },
+    {
+      "paper_id": 81,
+      "category": "任务自适应微调",
+      "reason": "摘要提出'STAF-LLM, a scalable and task-adaptive fine-tuning framework'，包含专家模型训练和任务自适应两阶段，使用AdaLoRA和任务引导路由器。"
+    },
+    {
+      "paper_id": 80,
+      "category": "工作负载特征分析",
+      "reason": "论文从用户、模型和系统三个角度捕获LLM服务特征，包括请求并发性、对话模式、响应长度和系统故障，摘要中明确列出'User request concurrency'、'User conversation patterns'、'Model response lengths'和'System response failures'。"
+    },
+    {
+      "paper_id": 78,
+      "category": "自动化日志分析",
+      "reason": "论文提出基于日志的故障诊断框架L4，通过自动提取日志事件、节点、阶段和迭代信息来诊断故障，摘要指出'L4 can automatically extract failure-indicating information from extensive training logs'。"
+    },
+    {
+      "paper_id": 82,
+      "category": "LLM驱动反馈生成",
+      "reason": "系统将ER图转换为JSON，利用LLM生成详细反馈和问答，实现自动化反馈。"
+    },
+    {
+      "paper_id": 83,
+      "category": "检测器评估",
+      "reason": "论文通过收集学生提交和ChatGPT生成文本，评估多个公开检测器的准确性、假阳性率和鲁棒性。"
+    },
+    {
+      "paper_id": 85,
+      "category": "优化攻击方法",
+      "reason": "提出JudgeDeceiver，通过梯度优化方法构造注入序列，实现攻击。"
+    },
+    {
+      "paper_id": 84,
+      "category": "提示工程与优化",
+      "reason": "论文比较了基线LLM与优化后的SoftAIBot，后者提供提示构建指南，并分析用户对提示文本与LLM响应关系的理解，摘要提到'prompt-based interactions'和'guidelines for constructing appropriate prompts'。"
+    },
+    {
+      "paper_id": 86,
+      "category": "分割学习框架",
+      "reason": "摘要明确介绍VFLAIR-LLM是一个分割学习框架，如'extensible and lightweight split learning framework for LLMs'，并提及'benchmark 5 attacks and 9 defenses under various Split Learning for LLM settings'。"
+    },
+    {
+      "paper_id": 88,
+      "category": "交互式可视化归因",
+      "reason": "论文提出LLM ATTRIBUTOR库，提供交互式可视化工具，将文本生成归因到训练数据点，技术路径为交互式可视化归因。"
+    },
+    {
+      "paper_id": 87,
+      "category": "文献综述与指南制定",
+      "reason": "通过范围综述（scoping review）分析现有文献，并基于此制定指南，如方法部分所述'performed a scoping review...to create guideline statements'。"
+    },
+    {
+      "paper_id": 89,
+      "category": "离线系统级评估",
+      "reason": "摘要提到'focus on offline, system-level evaluation of the text generated by LLMs'，并讨论了传统NLP评估方法和新兴的LLM评估方法。"
+    },
+    {
+      "paper_id": 90,
+      "category": "掩码提议选择",
+      "reason": "论文提出LLM-Seg框架，通过掩码提议选择连接分割基础模型和大语言模型，如摘要所述：'LLM-Seg effectively connects the current foundational Segmentation Anything Model and the LLM by mask proposals selection'。"
+    },
+    {
+      "paper_id": 91,
+      "category": "检索增强与知识图谱协同",
+      "reason": "WTS框架结合检索增强生成与知识图谱，实现DKG增强LLM和LLM辅助DKG演化的双向增强，形成闭环。"
+    },
+    {
+      "paper_id": 92,
+      "category": "学习型水印嵌入",
+      "reason": "提出基于学习的消息编码模块、重参数化模块和专用解码模块，结合优化波束搜索实现水印嵌入与提取。"
+    },
+    {
+      "paper_id": 93,
+      "category": "LLM模拟数据",
+      "reason": "论文核心是使用大语言模型生成模拟响应来替代人类受试者，如摘要中'applying simulated responses from large language models (LLM) for human subjects research'。"
+    },
+    {
+      "paper_id": 94,
+      "category": "模型切分与TEE",
+      "reason": "核心技术包括模型按层切分、客户端/服务器端部署TEE、轻量级加密通信以及稀疏化参数微调（SPF），摘要中详细描述了这些技术。"
+    },
+    {
+      "paper_id": 95,
+      "category": "规则引导提示",
+      "reason": "论文设计基于逻辑规则的结构化提示策略，形成Rule-Based LLM (RB-LLM)框架，提升LLM推理可靠性和控制性能。"
+    },
+    {
+      "paper_id": 96,
+      "category": "稀疏MoE微调分析",
+      "reason": "论文聚焦于基于稀疏MoE的LLM微调，摘要中描述'characterize sparse Mixture of Experts (MoE) based LLM fine-tuning'，并比较稀疏和稠密版本的性能。"
+    },
+    {
+      "paper_id": 97,
+      "category": "细粒度检测与角色识别",
+      "reason": "提出超越二分类的新范式，包括LLM角色识别（多分类）和参与度测量（回归），并构建基准LLMDetect。"
+    },
+    {
+      "paper_id": 98,
+      "category": "奇异值分解优化",
+      "reason": "论文提出SVD-LLM V2方法，通过理论截断损失分配压缩比和损失优化权重截断来改进SVD压缩，摘要中'optimizing singular value truncation'和'loss-optimized weight truncation'是核心。"
+    },
+    {
+      "paper_id": 99,
+      "category": "模态对齐适配器",
+      "reason": "论文提出AlignFormer作为神经适配器，通过CTC对齐和动态窗口QFormer减少语音与文本序列的长度不匹配，实现模态匹配，摘要中描述'AlignFormer consists of CTC and dynamic-window QFormer layers'和'reduce the length gap between the two modalities'。"
+    },
+    {
+      "paper_id": 100,
+      "category": "LLM基准测试与防御",
+      "reason": "论文提出基于LLM的提取攻击框架，收集数据集，并引入基于提示注入的缓解策略，系统性地基准测试了十种LLM的攻击与防御效果。"
+    },
+    {
+      "paper_id": 101,
+      "category": "中断追踪与流量融合",
+      "reason": "融合中断追踪和网络流量，采用先验融合和后验融合的两阶段分类器，实现高精度攻击。"
+    },
+    {
+      "paper_id": 102,
+      "category": "仿真与实验室平台",
+      "reason": "摘要描述平台为'Fly-LLM Sim lab platform'，包含仿真环境和预配置模块，采用插件式设计，支持定制，如'comprises different simulation environments and preconfigured lab modules'和'plug-in-based design'。"
+    },
+    {
+      "paper_id": 103,
+      "category": "回归感知微调与CoT",
+      "reason": "论文提出TRACT方法，结合回归感知训练和链式思维推理，如摘要所述：'combining CoT reasoning with regression-aware training'，并采用两阶段微调。"
+    },
+    {
+      "paper_id": 104,
+      "category": "架构与调度协同探索",
+      "reason": "论文提出WSC-LLM框架，同时优化晶圆级芯片的架构参数和调度策略，摘要明确'architecture and scheduling co-exploration framework'。"
+    },
+    {
+      "paper_id": 105,
+      "category": "马尔可夫决策过程",
+      "reason": "将LLM集成推理问题建模为马尔可夫决策过程，通过智能体动态选择最优回答路径。"
+    },
+    {
+      "paper_id": 106,
+      "category": "大模型驱动多群体优化",
+      "reason": "摘要提出MP-LLM方法，结合多群体迭代局部搜索和LLM驱动的知识发现，用于参数调整。"
+    },
+    {
+      "paper_id": 107,
+      "category": "LLM辅助代码生成",
+      "reason": "论文比较了手动代码开发与LLM辅助代码生成的能耗，结果显示LLM辅助方法碳足迹平均高32.72倍。"
+    },
+    {
+      "paper_id": 109,
+      "category": "语义聚类",
+      "reason": "方法通过将LLM输出分组为语义相似簇来检测幻觉，并利用第二个LLM执行聚类。"
+    },
+    {
+      "paper_id": 108,
+      "category": "深度强化学习路由",
+      "reason": "论文提出基于深度强化学习的QoS感知路由框架，使用动态状态抽象、异构图表征网络和动作影响估计器，如摘要所述：'propose a novel deep reinforcement learning (DRL)-based QoS-aware LLM routing framework'。"
+    },
+    {
+      "paper_id": 111,
+      "category": "LLM集成操作系统",
+      "reason": "论文提出基于大语言模型（LLM）构建智能操作系统（AIOS），以支持自动驾驶核心功能。"
+    },
+    {
+      "paper_id": 110,
+      "category": "生成式检索框架",
+      "reason": "论文提出一种新的生成式检索框架，集成LLM检索器、重新设计验证器并添加优化器，摘要明确'propose a novel generative retrieval framework'。"
+    },
+    {
+      "paper_id": 112,
+      "category": "LLM驱动的漏洞生成与检测",
+      "reason": "提出SecRT-LLM框架，利用LLM的上下文学习能力、提示策略和保真度检查，实现硬件漏洞的插入和检测。"
+    },
+    {
+      "paper_id": 113,
+      "category": "文本增强与知识蒸馏",
+      "reason": "论文提出基于LLM的文本增强方法，通过生成语义、情感、语言分析并利用对比学习蒸馏LLM知识到小模型，摘要指出'propose a large language model based text augmentation enhanced personality detection model, which distills the LLM's knowledge'。"
+    },
+    {
+      "paper_id": 114,
+      "category": "大语言模型微调",
+      "reason": "论文采用LLM微调和处理器描述语言设计，提升CPU设计自动化能力，技术路径基于大语言模型微调。"
+    },
+    {
+      "paper_id": 115,
+      "category": "自适应帧选择",
+      "reason": "提出轻量级M-LLM帧选择器，利用空间和时间监督信号自适应选择与用户查询相关的帧，而非均匀采样。"
+    },
+    {
+      "paper_id": 116,
+      "category": "提示工程",
+      "reason": "论文通过设计包含细粒度相关性标签的提示模板来提升LLM排序器的性能，属于提示工程方法。"
+    },
+    {
+      "paper_id": 117,
+      "category": "基准测试与心理测量",
+      "reason": "论文采用HELM框架进行零样本和少样本评估，并结合心理测量数据（如2PL模型）分析LLM的知识水平，属于基准测试与心理测量结合的技术路径。"
+    },
+    {
+      "paper_id": 118,
+      "category": "评估工具开发",
+      "reason": "论文开发了LLM-PBE工具包，通过实验分析隐私风险，提供开放平台以促进学术与实践进展。"
+    },
+    {
+      "paper_id": 119,
+      "category": "LLM作为评估器",
+      "reason": "论文探讨LLM替代人类评估者进行相关性判断，提出'LLM judges'概念，并分析其风险与最佳实践，摘要中'LLM evaluators'和'LLM-based judgments'是核心。"
+    },
+    {
+      "paper_id": 120,
+      "category": "多模型对比分析",
+      "reason": "论文使用七种不同LLM生成新闻，并进行语言分析和多种检测方法比较，摘要中提到'generate synthetic Bangla news articles using seven advanced LLM models'和'applied a variety of machine learning, deep learning, and knowledge-based models'。"
+    },
+    {
+      "paper_id": 121,
+      "category": "LLM辅助搜索",
+      "reason": "论文使用基于LLM的搜索引擎（Perplexity AI）辅助诊断，并评估结构化教程对使用效果的影响，摘要提到'LLM-based search engine'和'structured tutorial'。"
+    },
+    {
+      "paper_id": 122,
+      "category": "4D并行优化",
+      "reason": "论文提出WLB-LLM，一种WorkLoad-Balanced 4D Parallelism，通过负载感知的变长文档打包和细粒度文档分片策略，平衡流水线并行和上下文并行中的负载。"
+    },
+    {
+      "paper_id": 123,
+      "category": "近似表示学习",
+      "reason": "提出SEAL框架，通过序列化模块近似LLM的语义用户表示，降低计算成本。"
+    },
+    {
+      "paper_id": 125,
+      "category": "内部状态分类器",
+      "reason": "论文通过训练分类器基于LLM隐藏层激活来检测陈述真实性，摘要指出'based on the hidden layer activations of the LLM'。"
+    },
+    {
+      "paper_id": 126,
+      "category": "LLM微调与集成",
+      "reason": "摘要指出通过“parameter-efficiently fine tuning the LLM”并构建“LLM-centric control and management framework”实现自动化。"
+    },
+    {
+      "paper_id": 124,
+      "category": "用户行为分析",
+      "reason": "论文通过出声思维任务和半结构化访谈，识别大学生应对LLM输出中看似真实但错误内容的模式，属于用户行为与交互分析。"
+    },
+    {
+      "paper_id": 127,
+      "category": "不确定性感知调度",
+      "reason": "论文提出不确定性感知调度框架LLMSched，采用DAG模型和贝叶斯网络量化不确定性，摘要提到'uncertainty-aware scheduling framework'和'entropy-based mechanism to quantify their uncertainty reduction'。"
+    },
+    {
+      "paper_id": 128,
+      "category": "LLM辅助计算",
+      "reason": "采用隐私保护LLM进行SINS评分预测和辅助计算，摘要中明确'LLM-predicted'和'LLM-assisted calculation'。"
+    },
+    {
+      "paper_id": 129,
+      "category": "细粒度端到端编排",
+      "reason": "论文提出“fine-grained end-to-end orchestration”，利用任务原语作为基本单元，构建原语级数据流图，实现跨模块的并行化和流水线优化，如摘要所述“utilizes task primitives as the basic units and represents each query's workflow as a primitive-level dataflow graph”。"
+    },
+    {
+      "paper_id": 131,
+      "category": "静态与动态分析",
+      "reason": "研究整合了静态和动态分析，并结合基于LLM的有毒内容检测器和规则匹配来检测有害内容。"
+    },
+    {
+      "paper_id": 130,
+      "category": "策略引导与梯度下降",
+      "reason": "LaPuda使用抽象策略（policies）引导LLM优化，并借鉴梯度下降思想提出引导成本下降（GCD）算法，摘要中提及'deploys abstract policies'和'borrow the idea of gradient descent'。"
+    },
+    {
+      "paper_id": 132,
+      "category": "眼动追踪与NLP",
+      "reason": "论文使用眼动追踪技术记录学生编程过程，并利用自然语言处理技术分析学生与LLM的交互，属于多模态行为分析技术路径。"
+    },
+    {
+      "paper_id": 133,
+      "category": "逻辑程序生成与执行",
+      "reason": "论文提出从LLM生成多种逻辑程序（如Horn子句、DCG），并研究软合一、GPU加速最小模型计算等执行方法。"
+    },
+    {
+      "paper_id": 134,
+      "category": "提升回归+LLM",
+      "reason": "论文提出LLM-REGRESS方法，结合提升回归（lifted regression）与LLM生成的affordances，摘要指出'integrating lifted regression with LLM-generated affordances'。"
+    },
+    {
+      "paper_id": 136,
+      "category": "提示注入检测",
+      "reason": "论文使用越狱注入和提示泄露注入两种提示注入方法，测试其对不同复杂度LLM机器人的检测效果。"
+    },
+    {
+      "paper_id": 135,
+      "category": "LLM查询扩展",
+      "reason": "论文聚焦于基于LLM的查询扩展方法，分析其失败原因，摘要明确提及'LLM-based Query Expansion'和'LLM knowledge deficiencies'。"
+    },
+    {
+      "paper_id": 137,
+      "category": "LLM+EMS动觉辅助",
+      "reason": "提出Align-Analyze-Adjust策略，将LLM与电肌肉刺激（EMS）结合，实现动觉指导（'developed FlightAxis, a tool that integrates LLM with Electrical Muscle Stimulation (EMS) for flight skill acquisition'）。"
+    },
+    {
+      "paper_id": 138,
+      "category": "知识蒸馏与CoT推理",
+      "reason": "提出可解释LLM驱动的多维蒸馏框架，包含CoT推理和多维知识蒸馏（MKD），如'Explainable LLM-driven Multi-dimensional Distillation'和'Chain-of-Thought (CoT) reasoning'。"
+    },
+    {
+      "paper_id": 139,
+      "category": "无监督性能估计",
+      "reason": "方法仅需少量无标签样本（few unlabeled samples），利用负对数似然和困惑度作为特征，无需标注数据或模型内部信息。"
+    },
+    {
+      "paper_id": 140,
+      "category": "攻击与防御方法",
+      "reason": "摘要指出该综述全面调查了针对LLM-based agents的攻击和防御方法（'comprehensive survey of attacks against, and defenses of, the LLM-based agents'），并提出了评估标准。"
+    },
+    {
+      "paper_id": 141,
+      "category": "推测解码",
+      "reason": "论文提出基于集体和自适应推测解码的方法，摘要中多次提及'speculative decoding'和'SSM'。"
+    },
+    {
+      "paper_id": 142,
+      "category": "基于RDF的过滤机制",
+      "reason": "提出使用资源描述框架（RDF）的过滤机制，结合哈希码、明文和NLP三种方法检测泄露。"
+    },
+    {
+      "paper_id": 143,
+      "category": "大规模数据集构建",
+      "reason": "论文核心贡献是构建并发布了一个包含557,645次交互的大规模数据集，用于研究人类与LLM代理的交互。"
+    },
+    {
+      "paper_id": 144,
+      "category": "知识驱动型LLM代理",
+      "reason": "摘要提出LLM-Explorer使用LLM主要维护知识而非生成动作，知识以无LLM方式指导动作生成，如“uses LLMs primarily for maintaining the knowledge instead of generating actions”和“knowledge is used to guide action generation in a LLM-less manner”。"
+    },
+    {
+      "paper_id": 145,
+      "category": "人机协作标注",
+      "reason": "系统强调人类与LLM协作，通过LLM代理和标注管理、便捷鲁棒的LLM标注以及人类探索性验证来实现高质量标注。"
+    },
+    {
+      "paper_id": 146,
+      "category": "可组合效应处理",
+      "reason": "论文提出使用composable effect handling（可组合效应处理）来分离工作流逻辑与效应操作，如LLM调用、I/O和并发，摘要中强调'composable effect handling'和'effect handlers'。"
+    },
+    {
+      "paper_id": 147,
+      "category": "标签聚合方法",
+      "reason": "论文提出Crowd-LLM混合标签聚合方法，并验证其性能。"
+    },
+    {
+      "paper_id": 148,
+      "category": "LLM辅助分析",
+      "reason": "摘要中描述了使用LLM生成恶意软件功能描述（'LLM can generate descriptions that cover functions with an accuracy of up to 90.9%'）并让分析师使用这些描述进行伪静态分析任务，验证了LLM的实用性。"
+    },
+    {
+      "paper_id": 149,
+      "category": "LLM校准与集成",
+      "reason": "使用LLM生成分布，通过小前馈网络结合裁判特定和独立参数进行校准，预测人类评分。"
+    },
+    {
+      "paper_id": 150,
+      "category": "主题建模",
+      "reason": "论文采用主题建模方法识别LLM相关主题的增长领域，并揭示不同会议关注的主题。"
+    },
+    {
+      "paper_id": 151,
+      "category": "LLM代理攻击",
+      "reason": "方法利用LLM作为攻击代理，通过提示调优生成对抗扰动，摘要指出'LLM-based agent is developed to attack'和'utilize the prompt tuning technique'。"
+    },
+    {
+      "paper_id": 152,
+      "category": "模型驱动开发",
+      "reason": "论文提出基于模型的方法COPMA，使用特征块模型跟踪应用特征及其实现，关键词包括'MODEL-DRIVEN DEVELOPMENT'。"
+    },
+    {
+      "paper_id": 153,
+      "category": "LLM驱动分析",
+      "reason": "论文提出基于LLM的框架分析GPT Actions的数据收集和隐私政策一致性，如摘要所述'LLM-based framework to analyze...'和'LLM-based privacy policy analysis framework'。"
+    },
+    {
+      "paper_id": 154,
+      "category": "碳足迹优化",
+      "reason": "论文识别了降低LLM服务碳足迹的关键挑战和研究方向，属于技术路径中的环境可持续性改进。"
+    },
+    {
+      "paper_id": 155,
+      "category": "仿真器集成",
+      "reason": "论文提出使用仿真器替换第三方API，如'EMU-LLM, a framework that automatically selects and integrates emulators to replace third-party APIs'。"
+    },
+    {
+      "paper_id": 157,
+      "category": "多模态LLM增强",
+      "reason": "摘要提出GPT增强的多模态框架，融合视觉和文本信息，通过LLM调用提升检测性能。"
+    },
+    {
+      "paper_id": 156,
+      "category": "LLM增强强化学习",
+      "reason": "论文提出自适应置信加权LLM注入方法，将LLM信号集成到强化学习中，并动态调整探索-利用权衡。"
+    },
+    {
+      "paper_id": 158,
+      "category": "知识蒸馏",
+      "reason": "摘要指出该方法利用LLM的知识蒸馏来训练轻量级异常检测模型，使轻量模型学习LLM的表示和特征，实现知识迁移。"
+    },
+    {
+      "paper_id": 159,
+      "category": "人机协同标注",
+      "reason": "工具结合人类与LLM协作，用户通过多轮通信和示例建立来引导LLM标注。"
+    },
+    {
+      "paper_id": 160,
+      "category": "LLM与传统搜索对比",
+      "reason": "论文比较了传统搜索引擎和基于大语言模型的搜索引擎在图像地理定位任务中的用户交互和查询策略（摘要：'compare traditional and LLM-based search for the task of image geolocation'）。"
+    },
+    {
+      "paper_id": 161,
+      "category": "LLM增强强化学习",
+      "reason": "摘要提出LLM-AC框架，利用LLM（通过LoRA微调）增强Actor-Critic强化学习，具体包括LLM作为用户行为预测模型提升价值估计，并指导actor学习。"
+    },
+    {
+      "paper_id": 162,
+      "category": "代理子模型提取",
+      "reason": "核心技术是后训练子模型提取方法，通过识别保留关键专家、匹配合并中等专家，从基础LLM中提取轻量有效的代理子模型，无需额外重训练。"
+    },
+    {
+      "paper_id": 163,
+      "category": "LLM辅助代码理解",
+      "reason": "LLM作为Verilog阅读器，准确理解代码逻辑以生成测试，并采用提示工程优化提升理解范围与准确性。"
+    },
+    {
+      "paper_id": 164,
+      "category": "多释义聚合",
+      "reason": "核心方法为生成输入查询的多个释义并聚合预测结果，摘要中描述'generates multiple paraphrases...aggregate all predicted intent labels'。"
+    },
+    {
+      "paper_id": 165,
+      "category": "网络流数据重建",
+      "reason": "论文利用底层网络流数据重建训练时间线，摘要指出'utilization of underlying network flow data to reconstruct the training timelines of jobs'，这是核心技术路径。"
+    },
+    {
+      "paper_id": 166,
+      "category": "安全综述",
+      "reason": "摘要指出该综述覆盖攻击、防御和评估三个方面，并提供了分类体系。"
+    },
+    {
+      "paper_id": 167,
+      "category": "LLM语音助手",
+      "reason": "研究采用基于大语言模型（如ChatGPT-4）的语音助手Driver Mate，通过对话复杂度和频率调节来干预驾驶疲劳。"
+    },
+    {
+      "paper_id": 168,
+      "category": "大语言模型生成",
+      "reason": "数据集通过利用大语言模型（LLMs）生成高质量对话，并整合历史用户行为数据和对话模板。"
+    },
+    {
+      "paper_id": 169,
+      "category": "本地部署与过滤机制",
+      "reason": "比较了两种防止数据泄露的方案：敏感数据过滤机制（filtering mechanism for sensitive data with an external LLM）和本地部署开源模型（locally deployed LLM using open-source models）。"
+    },
+    {
+      "paper_id": 170,
+      "category": "大语言模型驱动",
+      "reason": "论文利用大语言模型（LLM）根据自然语言指令自动生成代码，实现任务放置的实时自适应调整，属于LLM驱动的自动化技术路径。"
+    },
+    {
+      "paper_id": 172,
+      "category": "检索增强生成",
+      "reason": "摘要说明模型利用检索增强生成（RAG）技术，结合Llama-2 LLM，达到95%以上的准确率。"
+    },
+    {
+      "paper_id": 171,
+      "category": "大语言模型增强",
+      "reason": "摘要中提出基于大语言模型的无监督方法，使用检索增强生成和CWE知识库，如'LLM-CloudSec uses Retrieval Augmented Generation (RAG) and the Common Weakness Enumeration (CWE) as an external knowledge base'。"
+    },
+    {
+      "paper_id": 173,
+      "category": "RAG与微调",
+      "reason": "论文主要讨论RAG和Fine-Tuning两种技术路径，摘要中明确提到“leverage Retrieval Augmented Generation (RAG) and LLM Fine-Tuning”。"
+    },
+    {
+      "paper_id": 174,
+      "category": "基准测试与预测建模",
+      "reason": "通过在不同GPU上对LLM推理服务进行基准测试，并学习预测模型以推荐硬件。"
+    },
+    {
+      "paper_id": 175,
+      "category": "提示引导生成",
+      "reason": "摘要明确使用prompt-guided approach，结合解剖区域检测和临床上下文提示，引导预训练LLM生成结构化报告。"
+    },
+    {
+      "paper_id": 176,
+      "category": "混合方法研究",
+      "reason": "采用三步混合方法研究（混合方法），包括满意度缺陷分析、实地研究验证以及LLM双重角色分析。"
+    },
+    {
+      "paper_id": 178,
+      "category": "威胁建模与防御",
+      "reason": "论文识别高风险的内部和外部威胁，并开发轻量级防御，摘要中'identify potential high-risk vulnerabilities'和'develop a lightweight, threat-agnostic defense'。"
+    },
+    {
+      "paper_id": 177,
+      "category": "基准数据集构建",
+      "reason": "论文构建了GitHub Recent Bugs (GHRB)框架，持续收集真实世界Java缺陷作为基准，摘要指出'present the GitHub Recent Bugs (GHRB) framework, which continuously gathers real-world Java bugs for use in evaluation'。"
+    },
+    {
+      "paper_id": 179,
+      "category": "偏差分析与缓解",
+      "reason": "论文发现神经检索模型对LLM生成内容存在源偏差，并提出去偏约束，摘要提到'source bias'和'propose a plug-and-play debiased constraint'。"
+    },
+    {
+      "paper_id": 180,
+      "category": "统一框架与评估",
+      "reason": "MARKLLM提供统一可扩展的框架实现水印算法，并支持自动可视化机制和12种评估工具，涵盖三种视角。"
+    },
+    {
+      "paper_id": 181,
+      "category": "理论引导的脚手架指令",
+      "reason": "提出TSI框架，利用隐喻理论构建知识图谱，通过脚手架问题引导LLM逐步生成推理过程。"
+    },
+    {
+      "paper_id": 182,
+      "category": "语义变量抽象",
+      "reason": "核心创新是Semantic Variable，通过暴露应用级知识实现数据流分析，优化多请求关联。"
+    },
+    {
+      "paper_id": 183,
+      "category": "回归测试方法改进",
+      "reason": "论文提出因LLM API的正确性概念、提示脆弱性和非确定性，需根本改变传统回归测试方法，如摘要所述'regression testing LLMs requires fundamental changes to traditional testing approaches'。"
+    },
+    {
+      "paper_id": 184,
+      "category": "微调与RAG",
+      "reason": "摘要提到指令微调多种LLM，并通过检索增强生成（RAG）技术增强信息检索。"
+    },
+    {
+      "paper_id": 185,
+      "category": "对抗性训练与微调",
+      "reason": "方法涉及对抗性LLM生成挑战性提示，目标LLM通过安全对齐数据微调，摘要指出'adversarial prompt writing'和'safety fine-tuning'的迭代过程。"
+    },
+    {
+      "paper_id": 186,
+      "category": "强化检索增强",
+      "reason": "摘要提出利用细粒度反馈的强化检索（Reinforcement Retrieval with Fine-grained Feedback），通过LLM的反馈优化检索策略。"
+    },
+    {
+      "paper_id": 187,
+      "category": "软硬件协同仿真",
+      "reason": "摘要强调'LLMServingSim: A HW/SW Co-Simulation Infrastructure'，并提及模拟迭代粒度和加速器编译器-仿真栈。"
+    },
+    {
+      "paper_id": 189,
+      "category": "设备端LLM混淆",
+      "reason": "核心方法是在设备端使用LLM自动理解查询中的私有属性，并生成假查询进行混淆，使生成的查询与真实查询不可区分。"
+    },
+    {
+      "paper_id": 188,
+      "category": "硬件加速与内存优化",
+      "reason": "论文分析CPU的专用加速器（如Intel AMX）、扩展ISA以及DDR和HBM内存选项对LLM推理性能的影响，摘要中提到'equipped with dedicated accelerators for efficient matrix computations'和'DDR and HBM memory, which provides options for optimizing for either memory capacity or bandwidth'。"
+    },
+    {
+      "paper_id": 191,
+      "category": "日志分析",
+      "reason": "取证分析过程通过LLM日志分析调用（The forensic analysis process is invoked through LLM log analysis），并评估了13种LLM用于此分析任务。"
+    },
+    {
+      "paper_id": 190,
+      "category": "对比学习与特征聚合",
+      "reason": "论文提出EvolveDroid系统，利用多视角特征聚合和对比学习进行模型更新，摘要指出'utilizes different view features...through feature aggregation'和'learns good representation...through contrastive learning'。"
+    },
+    {
+      "paper_id": 192,
+      "category": "强化学习子图检测",
+      "reason": "论文提出使用强化学习检测关键子图信息，摘要中明确说明'A reinforcement subgraph detection module was designed to search for essential neighborhoods'。"
+    },
+    {
+      "paper_id": 193,
+      "category": "攻击分类与框架构建",
+      "reason": "论文通过迭代探索利益相关者如何利用能力发起攻击，构建攻击分类法，并基于此框架进行实证分析。"
+    },
+    {
+      "paper_id": 194,
+      "category": "低代码可视化编程",
+      "reason": "摘要明确提到该框架通过六种简单的低代码可视化编程交互，使用户通过图形用户界面融入想法，无需编写繁琐提示。"
+    },
+    {
+      "paper_id": 195,
+      "category": "对抗性攻击",
+      "reason": "论文系统分析了攻击模式、框架设计漏洞及攻击内容生成，并通过实验验证攻击成功率高达89.60%，属于对抗性攻击技术路径。"
+    },
+    {
+      "paper_id": 196,
+      "category": "基准测试构建",
+      "reason": "论文构建了包含私有测试集的评估框架，并进行了数据泄露分析和相关性研究，摘要提到'we establish a robust evaluation framework'和'perform data leakage analysis'。"
+    },
+    {
+      "paper_id": 198,
+      "category": "向量数据库+多智能体强化学习",
+      "reason": "框架使用向量数据库缓存请求结果，并将优化问题建模为MDP，采用MARL算法决策请求调度。"
+    },
+    {
+      "paper_id": 197,
+      "category": "LLM验证检索",
+      "reason": "摘要提出LLatrieval方法，核心是'LLM updates the retrieval result until it verifies that the retrieved documents can sufficiently support answering the question'，即LLM迭代验证检索结果。"
+    },
+    {
+      "paper_id": 199,
+      "category": "细粒度分类检测",
+      "reason": "系统支持四类细粒度检测，包括人写、机器生成、机器写后人工化、人写后机器润色，不同于传统的二分类，如'LLM-DetectAIve supports four categories'。"
+    }
+  ]
+}

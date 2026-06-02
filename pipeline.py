@@ -6,7 +6,7 @@ import json, random
 import pandas as pd
 from pathlib import Path
 from llm import LLM, RateLimiter
-from stages import filter_stage, explore_stage, analyze_stage
+from stages import filter_stage, explore_stage
 from logger import logger
 from loaders import BaseLoader
 from utils import render_prompt, safe_str
@@ -52,11 +52,6 @@ def _show_samples(df, label="结果", mapping=None):
         score = row.get("score")
         score_str = f"(评分={score}) " if score is not None and not (isinstance(score, float) and pd.isna(score)) else ""
         logger.info(f"  [{i}] {score_str}{title}…")
-
-
-def _infer_dimensions(tax: dict) -> list:
-    return [{"name": k, "prefix": k[:4], "desc": "", "categories": list(v.keys())}
-            for k, v in tax.items()]
 
 
 def _show_data_peek(df, mapping):
@@ -129,75 +124,125 @@ class MLATEPipeline:
         return full_out
 
     # ── explore ──
-    def explore(self, input_csv: str, output_taxonomy: str,
-                batch_size: int = 20, max_papers: int = None,
-                source_type: str = "auto", researcher_guide: str = None) -> dict:
+    def explore(self, input_csv: str, output_raw_json: str,
+                max_papers: int = None,
+                source_type: str = "auto", researcher_guide: str = None,
+                initial_dims: str = None) -> dict:
+        """Phase 1: Spontaneous Discovery of sub-categories (Per-paper)"""
         df, mapping = BaseLoader.load(input_csv, source_type)
         _show_data_peek(df, mapping)
         
         if max_papers and max_papers < len(df):
             df = df.iloc[:max_papers]
 
-        dims = [] # Always start with empty dims for exploration
-        prompt = load_prompt("explore", self.prompt_dir)
-
-        full_accum = explore_stage.run_explore(
-            df, dims, prompt, self.llm, self.limiter,
-            batch_size, self.max_workers,
+        prompt_explore = load_prompt("explore", self.prompt_dir)
+        raw_accum = explore_stage.run_explore(
+            df, initial_dims, prompt_explore, self.llm, self.limiter,
+            self.max_workers,
             mapping["title"], mapping["abstract"], mapping["keywords"],
             researcher_guide=researcher_guide,
         )
+
+        with open(output_raw_json, "w", encoding="utf-8") as f:
+            json.dump(raw_accum, f, ensure_ascii=False, indent=2)
+        logger.success(f"原始探索草案已保存: {output_raw_json}", f"Raw discovery draft saved: {output_raw_json}")
+        return raw_accum
+
+    # ── converge ──
+    def converge(self, input_raw_json: str, output_taxonomy: str,
+                 limit_cats: int = 10, target_dims: str = None,
+                 researcher_guide: str = None, source_csv: str = None,
+                 output_csv: str = None) -> dict:
+        """Phase 2: Intelligent Convergence and Auto-Labeling (Supports Incremental Update)"""
+        with open(input_raw_json, encoding="utf-8") as f:
+            all_raw_accum = json.load(f)
+
+        # 1. Determine dimensions to process
+        available_dims = list(all_raw_accum.keys())
+        if not target_dims:
+            logger.info(f"未指定维度，将处理所有发现的维度: {', '.join(available_dims)}",
+                        f"No dims specified, processing all: {', '.join(available_dims)}")
+            requested_dims = available_dims
+        else:
+            requested_dims = [d.strip() for d in target_dims.split(",") if d.strip()]
+            # Validate
+            requested_dims = [d for d in requested_dims if d in available_dims]
+            if not requested_dims:
+                logger.error(f"指定的维度不存在。可用维度: {', '.join(available_dims)}",
+                             f"None of the specified dims exist. Available: {', '.join(available_dims)}")
+                return {}
+            logger.info(f"本次收敛维度: {', '.join(requested_dims)}", 
+                        f"Converging selected dims: {', '.join(requested_dims)}")
+
+        raw_accum_to_process = {k: all_raw_accum[k] for k in requested_dims}
+
+        # 2. Prepare Source Data
+        id_to_title = None
+        df = None
+        if source_csv:
+            df, mapping = BaseLoader.load(source_csv, "auto")
+            id_to_title = {i + 1: safe_str(row[mapping["title"]]) for i, row in df.iterrows()}
+
+        # 3. Perform Convergence
+        prompt_converge = load_prompt("converge", self.prompt_dir)
+        new_taxonomy, mapping_table = explore_stage.run_converge(
+            raw_accum_to_process, limit_cats, prompt_converge, self.llm, self.limiter,
+            researcher_guide=researcher_guide,
+            id_to_title=id_to_title
+        )
+
+        # 4. Incremental JSON Update
+        final_tax = {}
+        if Path(output_taxonomy).exists():
+            try:
+                with open(output_taxonomy, encoding="utf-8") as f:
+                    final_tax = json.load(f)
+            except: pass
+        
+        # Merge new into old (overwrite selected dims)
+        for dim, content in new_taxonomy.items():
+            final_tax[dim] = content
+
         with open(output_taxonomy, "w", encoding="utf-8") as f:
-            json.dump(full_accum, f, ensure_ascii=False, indent=2)
-        logger.info(f"→ {output_taxonomy}")
-        return full_accum
+            json.dump(final_tax, f, ensure_ascii=False, indent=2)
+        logger.success(f"分类体系已更新并保存: {output_taxonomy}", f"Taxonomy updated and saved: {output_taxonomy}")
 
-    # ── analyze ──
-    def analyze(self, input_csv: str, output_csv: str,
-                taxonomy_file: str = None, max_papers: int = None,
-                source_type: str = "auto") -> "pd.DataFrame":
-        df, mapping = BaseLoader.load(input_csv, source_type)
-        _show_data_peek(df, mapping)
-        
-        if max_papers and max_papers < len(df):
-            df = df.iloc[:max_papers].copy()
+        # 5. Incremental CSV Update (Auto-Labeling)
+        if output_csv:
+            # If output_csv exists, we update it; otherwise we use the source_csv as base
+            target_df = None
+            if Path(output_csv).exists():
+                target_df = pd.read_csv(output_csv, encoding="utf-8-sig")
+            elif df is not None:
+                target_df = df.copy()
 
-        tax = {}
-        if taxonomy_file:
-            with open(taxonomy_file, encoding="utf-8") as f:
-                tax = json.load(f)
+            if target_df is not None:
+                paper_labels = {} # { paper_id -> { dim -> (final_cat, reason, raw_cat) } }
+                for dim in requested_dims:
+                    m_table = mapping_table.get(dim, {})
+                    for item in all_raw_accum[dim]:
+                        pid = item["paper_id"]
+                        raw_cat = item["category"]
+                        # 确保映射到最终收敛类，找不到则记录原始
+                        final_cat = m_table.get(raw_cat, raw_cat)
+                        paper_labels.setdefault(pid, {})
+                        paper_labels[pid][dim] = (final_cat, item["reason"], raw_cat)
 
-        dims = _infer_dimensions(tax)
-        prompt = load_prompt("analyze", self.prompt_dir)
+                # Update columns
+                for dim in requested_dims:
+                    target_df[f"{dim}_raw_category"] = target_df.get(f"{dim}_raw_category", "")
+                    target_df[f"{dim}_category"] = target_df.get(f"{dim}_category", "")
+                    target_df[f"{dim}_reason"] = target_df.get(f"{dim}_reason", "")
+                    
+                for idx, row in target_df.iterrows():
+                    pid = idx + 1
+                    if pid in paper_labels:
+                        for dim, (f_cat, reason, r_cat) in paper_labels[pid].items():
+                            target_df.at[idx, f"{dim}_raw_category"] = r_cat
+                            target_df.at[idx, f"{dim}_category"] = f_cat
+                            target_df.at[idx, f"{dim}_reason"] = reason
 
-        df = analyze_stage.run_analyze(
-            df, dims, tax, prompt, self.llm, self.limiter,
-            self.max_workers, mapping["title"], mapping["abstract"], mapping["keywords"],
-        )
-        _show_samples(df, "分析后", mapping=mapping)
-        df.to_csv(output_csv, index=False, encoding="utf-8-sig")
-        logger.info(f"→ {output_csv}")
-        return df
+                target_df.to_csv(output_csv, index=False, encoding="utf-8-sig")
+                logger.success(f"文献标注已增量更新: {output_csv}", f"CSV labels updated incrementally: {output_csv}")
 
-    # ── retry ──
-    def retry(self, csv_path: str, output_csv: str = None) -> int:
-        # For retry, we assume it's a CSV and try to auto-identify columns
-        df = pd.read_csv(csv_path, encoding="utf-8-sig")
-        df, mapping = BaseLoader.identify_columns(df, "auto")
-        
-        dc = [c for c in df.columns if c.endswith("_category")]
-        dims = [{"name": c.replace("_category", ""), "prefix": c.replace("_category", "")[:4]} for c in dc]
-        
-        tax = {} # Placeholder
-        prompt = load_prompt("analyze", self.prompt_dir)
-
-        df = analyze_stage.retry_errors(
-            df, dims, tax, prompt, self.llm, self.limiter,
-            self.max_workers, mapping["title"], mapping["abstract"], mapping["keywords"],
-        )
-        out = output_csv or csv_path
-        df.to_csv(out, index=False, encoding="utf-8-sig")
-        dc = [c for c in df.columns if c.endswith("_category")]
-        rem = (df[dc[0]] == "ERROR").sum() if dc else 0
-        logger.info(f"剩余 ERROR: {rem}", f"Remaining ERROR: {rem}")
-        return rem
+        return final_tax
