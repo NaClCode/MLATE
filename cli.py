@@ -59,6 +59,16 @@ def main():
     ptr.add_argument("--lang", default="中文", help="目标语言（默认中文）")
     ptr.add_argument("--cols", help="如果是 CSV，指定需要翻译的列名（逗号分隔）")
 
+    # ── classify ──
+    pcl = sub.add_parser("classify", help="自动分类：按用户预定义分类体系对文献进行归类")
+    pcl.add_argument("--input", required=True, help="输入 CSV 文件路径")
+    pcl.add_argument("--output", required=True, help="输出 CSV 文件路径（含分类结果）")
+    pcl.add_argument("--schema", required=True, help="分类体系：JSON 文件、文本文件或逗号分隔的 inline 类别")
+    pcl.add_argument("--mode", choices=["single", "multi"], default="single",
+                     help="分类模式：single（每篇一个类）或 multi（每篇多个类），默认 single")
+    pcl.add_argument("--guide", help="研究者引导词")
+    pcl.add_argument("--output-lang", help="分类理由的生成语言（默认读取配置 output_lang）")
+
     args = parser.parse_args()
 
     # Set language: Priority CLI > Config > Env (Default: en)
@@ -93,6 +103,10 @@ def main():
                       source_csv=args.source_csv, output_csv=args.output_csv, language=output_lang)
     elif args.command == "translate":
         pipe.translate(args.input, args.output, target_lang=args.lang, columns=args.cols)
+    elif args.command == "classify":
+        pipe.classify(args.input, args.output, schema=args.schema,
+                      classify_mode=args.mode, researcher_guide=args.guide,
+                      language=output_lang)
 
 
 if __name__ == "__main__":

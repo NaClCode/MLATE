@@ -8,7 +8,7 @@ from pathlib import Path
 
 from tqdm import tqdm
 from llm import LLM, RateLimiter
-from stages import filter_stage, explore_stage
+from stages import filter_stage, explore_stage, classify_stage
 from logger import logger
 from loaders import BaseLoader
 from utils import render_prompt, safe_str
@@ -326,3 +326,39 @@ class MLATEPipeline:
                 json.dump(translated_data, f, ensure_ascii=False, indent=2)
         
         logger.success(f"翻译完成: {output_file}", f"Translation completed: {output_file}")
+
+    # ── classify ──
+    def classify(self, input_csv: str, output_csv: str,
+                 schema: str, classify_mode: str = "single",
+                 source_type: str = "auto", researcher_guide: str = None,
+                 language: str = "中文") -> pd.DataFrame:
+        """Classify papers into user-defined categories (single-label or multi-label)"""
+        df, mapping = BaseLoader.load(input_csv, source_type)
+        total = len(df)
+        logger.info(f"加载文献: {total} 篇", f"Loaded {total} papers")
+
+        # 解析分类体系
+        schema_path = Path(schema)
+        if schema_path.exists():
+            # 从文件读取
+            raw = schema_path.read_text(encoding="utf-8")
+            try:
+                parsed = json.loads(raw)
+            except json.JSONDecodeError:
+                parsed = [line.strip() for line in raw.split("\n") if line.strip()]
+        else:
+            # 以逗号分隔的 inline 分类
+            parsed = [c.strip() for c in schema.split(",") if c.strip()]
+
+        prompt_classify = load_prompt("classify", self.prompt_dir)
+        result_df = classify_stage.run_classify(
+            df, parsed, classify_mode, prompt_classify, self.llm, self.limiter,
+            self.max_workers,
+            mapping["title"], mapping["abstract"], mapping["keywords"],
+            researcher_guide=researcher_guide,
+            output_lang=language
+        )
+
+        result_df.to_csv(output_csv, index=False, encoding="utf-8-sig")
+        logger.success(f"分类结果已保存: {output_csv}", f"Classification results saved: {output_csv}")
+        return result_df

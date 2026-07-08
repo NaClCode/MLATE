@@ -13,6 +13,7 @@ MLATE is a CLI tool for literature deconstruction and taxonomy building using La
 - **Incremental Iterative Tuning**: Supports repeated adjustment of convergence parameters for specific dimensions (e.g., "Application") while protecting existing data in other processed dimensions.
 - **Dual-Category Labeling**: The final CSV report includes both `raw_labels` and `converged_categories`, allowing researchers to verify the AI's classification evolution logic.
 - **Automated Translation Support**: Built-in translation module to convert paper titles, abstracts, and categories across multiple languages using LLMs.
+- **Predefined Classification**: Classify papers against user-defined categories in single-label or multi-label mode.
 
 ## Quick Start
 
@@ -30,6 +31,11 @@ mlate converge --input draft.json --output taxonomy.json \
 # 4. Translate: (Optional) Translate abstracts, titles, or labels
 mlate translate --input final_result.csv --output final_en.csv --lang "English" \
   --cols "Title,Abstract,Application_category"
+
+# 5. Classify: (Optional) Predefined classification (single or multi-label)
+mlate classify --input filtered.csv --output classified.csv \
+  --schema "Deep Learning,NLP,Computer Vision,Data Mining" --mode multi \
+  --guide "Classify by research method, not application domain"
 ```
 
 ## CLI Reference
@@ -51,6 +57,9 @@ mlate translate --input final_result.csv --output final_en.csv --lang "English" 
 | | `--output-lang` | Language for category definitions. |
 | **translate**| `--lang` | Target language for translation. |
 | | `--cols` | Columns to translate (comma separated, CSV only). |
+| **classify** | `--schema` | Predefined categories (JSON file, text file, or comma-separated). |
+| | `--mode` | Classification mode: `single` (one per paper) or `multi` (multiple). |
+| | `--guide` | Researcher guidance for fine-tuning. |
 | **config** | `set/show` | Manage global settings (model, language, etc.). |
 
 ## Configuration

@@ -13,6 +13,7 @@ MLATE (Multi-dimensional Literature Analysis and Thematic Exploration) 是一个
 - **增量式迭代调优**: 支持针对特定维度（如"应用场景"）反复调整收敛参数，系统会自动保护其他已处理维度的存量数据。
 - **双分类标注体系**: 最终生成的 CSV 报表同时保留原始标签与收敛后的大类，方便研究者核对 AI 的分类演化逻辑。
 - **自动化翻译支持**: 内置翻译模块，支持利用 LLM 对文献标题、摘要及分类结果进行多语言转换。
+- **预定分类支持**: 支持用户提供预定义类别，对文献进行单标签或多标签的自动分类。
 
 ## 快速上手
 
@@ -30,6 +31,11 @@ mlate converge --input draft.json --output taxonomy.json \
 # 4. 自动化翻译：(可选) 翻译摘要、标题或分类标签
 mlate translate --input final_result.csv --output final_en.csv --lang "English" \
   --cols "Title,Abstract,应用场景_category"
+
+# 5. 自动分类：(可选) 按预定分类体系对文献进行单标签或多标签分类
+mlate classify --input filtered.csv --output classified.csv \
+  --schema "深度学习,自然语言处理,计算机视觉,数据挖掘" --mode multi \
+  --guide "请根据论文的研究方法而非应用场景进行分类"
 ```
 
 ## 命令行参数参考
@@ -51,6 +57,9 @@ mlate translate --input final_result.csv --output final_en.csv --lang "English" 
 | | `--output-lang`| 分类定义与判定标准的生成语言。 |
 | **translate**| `--lang` | 目标翻译语言（如 English, 中文）。 |
 | | `--cols` | 指定需要翻译的列名（逗号分隔，CSV专用）。 |
+| **classify** | `--schema` | 预定分类体系（JSON 文件、文本文件或逗号分隔的 inline 类别）。 |
+| | `--mode` | 分类模式：`single`（每篇一个类）或 `multi`（每篇多个类）。 |
+| | `--guide` | 研究者引导词，用于精细化控制分类方向。 |
 | **config** | `set/show` | 管理全局配置（如默认模型、输出语言、日志级别）。 |
 
 ## 配置说明
