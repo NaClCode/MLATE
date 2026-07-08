@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "MLATE"
-version = "0.1.0"
+version = "0.1.1"
 description = "Multi-dimensional Literature Analysis and Thematic Exploration"
 authors = [{name = "naclcode"}]
 license = "MIT"
