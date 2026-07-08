@@ -7,24 +7,22 @@ import pandas as pd
 from pathlib import Path
 
 from tqdm import tqdm
-from llm import LLM, RateLimiter
-from stages import filter_stage, explore_stage, classify_stage
-from logger import logger
-from loaders import BaseLoader
-from utils import render_prompt, safe_str
+from .llm import LLM, RateLimiter
+from .stages import filter_stage, explore_stage, classify_stage
+from .logger import logger
+from .loaders import BaseLoader
+from .utils import render_prompt, safe_str
 
 _HERE = Path(__file__).parent
 _DEFAULT_PROMPT_DIR = _HERE / "prompts"
 
-
-def load_prompt(name: str, prompt_dir: str = None) -> str:
+def load_prompt(name: str, prompt_dir: str = None):
     """从 markdown 文件加载 prompt 模板"""
-    d = Path(prompt_dir) if prompt_dir else _DEFAULT_PROMPT_DIR
-    path = d / name
-    if not path.suffix:
-        path = path.with_suffix(".md")
-    return path.read_text(encoding="utf-8")
-
+    if prompt_dir is None:
+        # 根据当前文件所在路径，计算出 prompts 文件夹的位置
+        base_dir = Path(__file__).parent
+        prompt_dir = base_dir / "prompts"
+    return (Path(prompt_dir) / f"{name}.md").read_text(encoding="utf-8")
 
 def _show_samples(df, label="结果", mapping=None):
     # If filter stage, only show passed ones

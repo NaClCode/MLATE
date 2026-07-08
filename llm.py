@@ -3,10 +3,10 @@
 API Key 与 Base URL 解析委托给 config 模块，实现：
   CLI 参数 > 环境变量 > 配置文件 > 模型名推断
 """
-import os, time, threading, json
+import time, threading, json
 from openai import OpenAI
-import config
-from logger import logger
+from . import config
+from .logger import logger
 
 __all__ = ["RateLimiter", "LLM"]
 

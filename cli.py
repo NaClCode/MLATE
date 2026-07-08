@@ -1,8 +1,8 @@
 """MLATE CLI 入口"""
 import argparse
-from pipeline import MLATEPipeline
-import config
-from logger import logger
+from .pipeline import MLATEPipeline
+from . import config
+from .logger import logger
 
 
 def main():

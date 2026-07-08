@@ -1,6 +1,6 @@
 import pandas as pd
 from pathlib import Path
-from logger import logger
+from .logger import logger
 
 class BaseLoader:
     """Base class for data loaders."""

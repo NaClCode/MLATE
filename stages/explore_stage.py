@@ -1,10 +1,9 @@
 """主题探索阶段：逐篇发现草案 + 智能收敛"""
 import json, threading
-import pandas as pd
 from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from utils import build_paper, render_prompt, safe_str
-from logger import logger
+from ..utils import build_paper, render_prompt, safe_str
+from ..logger import logger
 
 
 def run_explore(df, dims, prompt_tpl, llm, limiter,

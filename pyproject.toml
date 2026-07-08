@@ -19,11 +19,11 @@ dependencies = [
 ]
 
 [project.scripts]
-mlate = "cli:main"
+mlate = "mlate.cli:main"
 
 [tool.setuptools]
-packages = ["stages"]
-py-modules = ["cli", "config", "llm", "loaders", "logger", "pipeline", "utils", "__init__", "__main__"]
+packages = ["mlate", "mlate.stages"]
+package-dir = { "mlate" = "." }
 
 [tool.setuptools.package-data]
-"*" = ["prompts/*.md"]
+"mlate" = ["prompts/*.md"]

@@ -5,11 +5,10 @@
   - multi: 每篇文献可归入零个或多个类别
 """
 import json, threading
-import pandas as pd
 from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from utils import build_paper, render_prompt, safe_str
-from logger import logger
+from ..utils import build_paper, render_prompt, safe_str
+from ..logger import logger
 
 
 def run_classify(df, schema, classify_mode, prompt_tpl, llm, limiter,

@@ -5,9 +5,9 @@ Security Design:
   - API Keys must be provided via environment variables (MLATE_API_KEY) or CLI arguments.
   - Base URL and Model are non-sensitive and can be persisted safely.
 """
-import os, json, sys, shutil
+import os, json, sys
 from pathlib import Path
-from logger import logger
+from .logger import logger
 
 CONFIG_DIR = Path.home() / ".mlate"
 CONFIG_FILE = CONFIG_DIR / "config.json"

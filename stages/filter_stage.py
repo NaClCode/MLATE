@@ -1,10 +1,10 @@
 """筛选阶段：先抽样探索评分标准 → 再逐篇评分 → 筛选展示"""
-import random, json
+import json
 import pandas as pd
 from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor
-from utils import safe_str, build_paper, render_prompt
-from logger import logger
+from ..utils import safe_str, build_paper, render_prompt
+from ..logger import logger
 
 
 def run_filter(df, topic, min_score, llm, limiter, max_workers,
